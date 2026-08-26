@@ -267,6 +267,8 @@ itens_sem_fator:
   - p_sex
 
 # --- Colunas PII (remover na Fase 1 ANTES de qualquer análise) --- removendo dados sensiveis
+# Nota: lista não exaustiva. Na Fase 1, varrer o dataset inteiro em busca de
+# outras colunas que contenham emails, telefones ou informações de contato.
 colunas_pii:
   - theirEmail
   - userEmail
@@ -274,9 +276,6 @@ colunas_pii:
   - theirEmailCleaned
   - contactInformation
   - convenientTimes
-  nota: >
-    Lista não exaustiva. Na Fase 1, varrer o dataset inteiro em busca de
-    outras colunas que contenham emails, telefones ou informações de contato.
 
 # --- Padrões de colunas-lixo (remover na Fase 1) ---
 colunas_lixo:

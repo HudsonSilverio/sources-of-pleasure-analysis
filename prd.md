@@ -93,9 +93,11 @@ Tarefas:
    silenciosamente.
 4. Recalcular os scores de fator a partir dos itens brutos usando o mapeamento do
    yaml (ignorar todas as colunas derivadas do CSV — estão corrompidas).
-5. Definir critérios de completude **junto com o usuário** (proposta: manter
-   linhas com todos os 37 itens respondidos; reportar quantas linhas sobrevivem
-   e o que se perde).
+5. **Critério de completude (decidido com o usuário):** manter **somente** as
+   linhas em que todos os 37 itens `p_*` foram respondidos (nenhum valor
+   ausente). Usuários que abandonaram a ferramenta no meio são descartados.
+   Os exercícios de reflexão e o email são opcionais por design — sua ausência
+   não exclui a linha. Reportar quantas linhas sobrevivem e o que se perde.
 6. Deduplicar se necessário (mesmo Run/User); discutir a regra com o usuário.
 7. Salvar `data/processed/clean.csv` (ou parquet) + relatório de limpeza: linhas
    que entraram, linhas que saíram, colunas removidas e por quê, decisões tomadas.

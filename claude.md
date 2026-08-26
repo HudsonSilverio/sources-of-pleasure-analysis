@@ -90,7 +90,10 @@ anotações de disponibilidade de horário.
   ficam limitadas a grupos derivados (ex.: clusters, status de conclusão, período
   temporal). Limitação conhecida — registre, não contorne inventando grupos.
 - Muitas linhas são execuções incompletas (usuários que abandonaram no meio).
-  Os critérios de completude são decididos **junto com o usuário** na Fase 1.
+  **Critério de completude (decidido com o usuário):** manter **somente** linhas
+  com todos os 37 itens `p_*` respondidos. Quem não completou todas as 37
+  perguntas é descartado. Exercícios de reflexão e email são opcionais por
+  design e sua ausência não exclui a linha.
 
 ## GUARDRAILS ESTATÍSTICOS
 
