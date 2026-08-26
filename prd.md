@@ -107,16 +107,53 @@ Tarefas:
 ---
 
 ### Fase 2 — Análise descritiva
-**Objetivo:** descrever o comportamento de cada variável analítica.
+**Objetivo:** descrever o comportamento de cada variável analítica, individualmente.
+A Fase 2 é um raio-X de cada variável isolada — relações entre variáveis ficam
+para a Fase 3 (EDA).
 
 Para cada um dos 37 itens e dos 6 scores de fator recalculados:
-média, mediana, moda, DP, variância, quartis/IQR, mín/máx, frequências por opção
-de resposta, taxa de missing, assimetria (skewness), curtose, flags de outliers,
-efeitos de piso/teto.
+
+**Tendência central:** média, mediana, moda, média aparada (trimmed mean 5%).
+
+**Dispersão:** desvio padrão, variância, MAD (Median Absolute Deviation), IQR,
+amplitude (range), coeficiente de variação (CV — com ressalva para médias
+próximas de zero).
+
+**Posição:** mínimo, máximo, quartis (Q1, Q2, Q3), percentis P1, P5, P10, P25,
+P50, P75, P90, P95, P99.
+
+**Forma da distribuição:** assimetria (skewness), curtose em excesso (kurtosis),
+testes de normalidade (Shapiro-Wilk, D'Agostino K², Anderson-Darling — com a
+ressalva de que com N ≈ 6.500 sempre rejeitam; reportar a magnitude do desvio,
+não apenas o p-valor).
+
+**Frequências (itens Likert):** frequência absoluta e relativa por opção de
+resposta (-3 a +3), frequência acumulada, percentual acumulado.
+
+**Indicadores específicos para Likert:** efeito de teto (% no +3), efeito de
+piso (% no -3), top-2 box (% em +2 ou +3), bottom-2 box (% em -2 ou -3),
+net agreement (top-2 − bottom-2), entropia de Shannon (dispersão das respostas),
+coeficiente de bimodalidade (BC > 0.555 = candidato a bimodal).
+
+**Outliers e padronização:** Z-score, modified Z-score (baseado em MAD),
+identificação de outliers pelo método IQR (Q1 - 1.5×IQR, Q3 + 1.5×IQR),
+valores únicos / cardinalidade.
+
+**Precisão:** erro padrão da média (SEM), intervalo de confiança 95% da média.
+
+**Diagnósticos comparativos:** diferença média × mediana (flag se |dif| > 0.5),
+razão DP / MAD (flag se > 1.5).
+
+**Taxa de missing:** 0% por construção (Fase 1 filtrou), mas registrar.
+
+**Premissa declarada:** itens Likert de 7 pontos tratados como intervalares
+(convencional na literatura); preferir Spearman onde distribuições forem muito
+assimétricas (declarar uma vez e referenciar nas fases seguintes).
 
 Entregáveis: `outputs/reports/phase2_descriptive.md` com tabelas-resumo e a
 leitura principal (ex.: quais prazeres ranqueiam mais alto/mais baixo no geral,
-quais itens são mais polarizadores). Gráficos simples de distribuição vão para
+quais itens são mais polarizadores, quais têm efeito de teto, quais são
+bimodais). Gráficos simples de distribuição vão para
 `outputs/figures/exploratory/` (são gráficos de trabalho, não os finais estilo
 Statista).
 
