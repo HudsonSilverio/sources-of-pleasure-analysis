@@ -57,6 +57,16 @@ Toda fase termina com: um script em `scripts/`, um relatório em `outputs/report
 um checkpoint do usuário e um commit no git. Nunca inicie a fase N+1 sem aprovação
 da fase N.
 
+**Convenção de artefatos reutilizáveis:** toda fase que calcula dados intermediários
+(estatísticas, matrizes, flags, scores) deve salvá-los como CSVs em
+`data/processed/` com o prefixo `phaseN_` (ex: `phase2_item_stats.csv`,
+`phase3_corr_items.csv`). Isso permite que fases seguintes consumam os resultados
+diretamente sem recalcular. O relatório da fase deve listar os artefatos gerados
+em uma seção "Artefatos reutilizáveis".
+
+**Convenção de gráficos:** gráficos exploratórios ficam em
+`outputs/figures/exploratory/<phaseN>/`. Cada fase tem sua própria subpasta.
+
 ---
 
 ### Fase 0 — Entendimento da ferramenta
@@ -154,8 +164,8 @@ Entregáveis: `outputs/reports/phase2_descriptive.md` com tabelas-resumo e a
 leitura principal (ex.: quais prazeres ranqueiam mais alto/mais baixo no geral,
 quais itens são mais polarizadores, quais têm efeito de teto, quais são
 bimodais). Gráficos simples de distribuição vão para
-`outputs/figures/exploratory/` (são gráficos de trabalho, não os finais estilo
-Statista).
+`outputs/figures/exploratory/<phaseN>/` (são gráficos de trabalho, não os finais
+estilo Statista). Cada fase tem sua própria subpasta.
 
 **Pronto quando:** o usuário revisou o quadro descritivo e aprovou.
 

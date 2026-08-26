@@ -17,7 +17,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CLEAN_CSV = PROJECT_ROOT / "data" / "processed" / "clean.csv"
 CONFIG_YAML = PROJECT_ROOT / "config" / "instrument.yaml"
 REPORT_PATH = PROJECT_ROOT / "outputs" / "reports" / "phase2_descriptive.md"
-FIG_DIR = PROJECT_ROOT / "outputs" / "figures" / "exploratory"
+FIG_DIR = PROJECT_ROOT / "outputs" / "figures" / "exploratory" / "phase2"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # ---------------------------------------------------------------------------
@@ -636,7 +636,7 @@ for col in FACTOR_COLS:
 # --- Charts list ---
 report_lines.append("\n---\n")
 report_lines.append("## Graficos exploratórios\n")
-report_lines.append("Todos em `outputs/figures/exploratory/`:\n")
+report_lines.append("Todos em `outputs/figures/exploratory/phase2/`:\n")
 chart_list = [
     ("01_items_ranked_by_mean.png", "Quais fontes de prazer sao mais valorizadas?"),
     ("02_factors_ranked_by_mean.png", "Qual categoria de prazer domina?"),

@@ -26,7 +26,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CLEAN_CSV = PROJECT_ROOT / "data" / "processed" / "clean.csv"
 CONFIG_YAML = PROJECT_ROOT / "config" / "instrument.yaml"
 REPORT_PATH = PROJECT_ROOT / "outputs" / "reports" / "phase3_eda.md"
-FIG_DIR = PROJECT_ROOT / "outputs" / "figures" / "exploratory"
+FIG_DIR = PROJECT_ROOT / "outputs" / "figures" / "exploratory" / "phase3"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 SEED = 42
@@ -688,6 +688,140 @@ except Exception:
 df.drop(columns=["_cluster"], inplace=True, errors="ignore")
 
 # =====================================================================
+# 14. STANDALONE ITEMS ANALYSIS
+# =====================================================================
+print("\n14. Analise dos 6 itens standalone (sem fator)...")
+
+STANDALONE_COLS = config.get("itens_sem_fator", [])
+STANDALONE_LABELS = {c: ITEM_LABELS[c] for c in STANDALONE_COLS}
+standalone_labels_short = [STANDALONE_LABELS[c] for c in STANDALONE_COLS]
+
+# 14a. Correlation matrix among standalone items (6x6)
+corr_standalone = df[STANDALONE_COLS].corr(method="spearman")
+
+# 14b. Correlation of each standalone with each factor
+standalone_vs_factors = pd.DataFrame(index=STANDALONE_COLS, columns=FACTOR_COLS, dtype=float)
+for sc in STANDALONE_COLS:
+    for fc in FACTOR_COLS:
+        rho, _ = stats.spearmanr(df[sc], df[fc])
+        standalone_vs_factors.loc[sc, fc] = rho
+
+# Plot: combined figure — left: 6x6 standalone, right: 6 standalone x 6 factors
+fig, axes = plt.subplots(1, 2, figsize=(18, 8))
+fig.suptitle("Onde os 6 itens sem fator se encaixam?",
+             fontsize=14, fontweight="bold")
+
+# Left: standalone inter-correlations
+ax = axes[0]
+im = ax.imshow(corr_standalone.values, cmap="YlOrRd", vmin=0, vmax=0.5, aspect="auto")
+ax.set_xticks(range(6))
+ax.set_xticklabels(standalone_labels_short, rotation=45, ha="right", fontsize=9)
+ax.set_yticks(range(6))
+ax.set_yticklabels(standalone_labels_short, fontsize=9)
+for i in range(6):
+    for j in range(6):
+        val = corr_standalone.values[i, j]
+        if i != j:
+            ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=9)
+plt.colorbar(im, ax=ax, label="Spearman rho", shrink=0.8)
+ax.set_title("Correlacoes entre os 6 itens standalone", fontsize=10)
+
+# Right: standalone vs factors
+ax = axes[1]
+vals = standalone_vs_factors.values.astype(float)
+im2 = ax.imshow(vals, cmap="YlOrRd", vmin=0, vmax=0.5, aspect="auto")
+ax.set_xticks(range(6))
+ax.set_xticklabels(factor_labels_short, rotation=45, ha="right", fontsize=9)
+ax.set_yticks(range(6))
+ax.set_yticklabels(standalone_labels_short, fontsize=9)
+for i in range(6):
+    for j in range(6):
+        val = vals[i, j]
+        ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=9)
+plt.colorbar(im2, ax=ax, label="Spearman rho", shrink=0.8)
+ax.set_title("Correlacao de cada standalone com cada fator", fontsize=10)
+
+plt.tight_layout()
+save_fig(fig, "23_standalone_items_analysis")
+
+# Generate observations
+# Find strongest standalone-factor association
+best_sf = standalone_vs_factors.stack()
+best_sf_idx = best_sf.astype(float).abs().idxmax()
+best_sf_val = best_sf.loc[best_sf_idx]
+best_sf_item = STANDALONE_LABELS[best_sf_idx[0]]
+best_sf_factor = FACTOR_LABELS[best_sf_idx[1]]
+
+# Find strongest standalone-standalone pair (excluding diagonal)
+standalone_pairs = []
+for i in range(6):
+    for j in range(i+1, 6):
+        standalone_pairs.append((
+            standalone_labels_short[i], standalone_labels_short[j],
+            corr_standalone.values[i, j]
+        ))
+standalone_pairs.sort(key=lambda x: abs(x[2]), reverse=True)
+top_standalone_pair = standalone_pairs[0]
+
+# Mean inter-standalone correlation
+mask_standalone = np.ones_like(corr_standalone.values, dtype=bool)
+np.fill_diagonal(mask_standalone, False)
+mean_standalone_corr = corr_standalone.values[mask_standalone].mean()
+
+add_obs(
+    f"Os 6 itens standalone tem correlacao media entre si de {mean_standalone_corr:.2f}. "
+    f"O par mais correlacionado e {top_standalone_pair[0]} ↔ {top_standalone_pair[1]} "
+    f"(rho={top_standalone_pair[2]:.2f}). "
+    f"O item standalone mais associado a um fator e {best_sf_item} com "
+    f"{best_sf_factor} (rho={float(best_sf_val):.2f}).",
+    "Os itens standalone deveriam ser integrados a fatores existentes, formar um novo fator, ou permanecer independentes?"
+)
+
+# =====================================================================
+# SAVE REUSABLE ARTIFACTS (CSVs)
+# =====================================================================
+print("\n15. Salvando artefatos reutilizaveis...")
+
+PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
+
+# 1. Correlation matrix — items (37x37)
+corr_items_df = corr_items.copy()
+corr_items_df.index = labels_short
+corr_items_df.columns = labels_short
+corr_items_df.to_csv(PROCESSED_DIR / "phase3_corr_items.csv")
+print("  Salvo: phase3_corr_items.csv")
+
+# 2. Correlation matrix — factors (6x6)
+corr_factors_df = corr_factors.copy()
+corr_factors_df.index = factor_labels_short
+corr_factors_df.columns = factor_labels_short
+corr_factors_df.to_csv(PROCESSED_DIR / "phase3_corr_factors.csv")
+print("  Salvo: phase3_corr_factors.csv")
+
+# 3. PCA loadings (37 items x N components)
+loadings_df = pd.DataFrame(
+    loadings,
+    index=labels_short,
+    columns=[f"PC{i+1}" for i in range(n_components_show)]
+)
+loadings_df.index.name = "item"
+loadings_df.to_csv(PROCESSED_DIR / "phase3_pca_loadings.csv")
+print("  Salvo: phase3_pca_loadings.csv")
+
+# 4. Anomaly flags per respondent
+anomaly_df = pd.DataFrame(index=range(N))
+anomaly_df["straight_liner"] = (df[ITEM_COLS].nunique(axis=1) == 1).values
+anomaly_df["low_variance"] = (df[ITEM_COLS].nunique(axis=1) <= 2).values
+try:
+    anomaly_df["mahalanobis_dist"] = mahal_dist
+    anomaly_df["mahalanobis_outlier_p99"] = mahal_dist > threshold_mahal
+except NameError:
+    anomaly_df["mahalanobis_dist"] = np.nan
+    anomaly_df["mahalanobis_outlier_p99"] = False
+anomaly_df.to_csv(PROCESSED_DIR / "phase3_anomaly_flags.csv", index=False)
+print("  Salvo: phase3_anomaly_flags.csv")
+
+# =====================================================================
 # REPORT
 # =====================================================================
 print("\nGerando relatorio...")
@@ -765,6 +899,13 @@ report_lines.append("| Baixa variabilidade | Respondentes com no maximo 2 valore
 report_lines.append("| Distancia de Mahalanobis | Distancia multivariada ao centroide. Outliers = acima do P99. Identifica perfis de resposta raros | Todos os respondentes |")
 report_lines.append("")
 
+report_lines.append("### 10. Analise dos itens standalone")
+report_lines.append("| Metodo | Descricao | Aplicado a |")
+report_lines.append("|--------|-----------|------------|")
+report_lines.append("| Correlacao inter-standalone (Spearman) | Matriz 6x6 de correlacoes entre os itens sem fator. Verifica se formam agrupamentos entre si | 6 itens standalone |")
+report_lines.append("| Correlacao standalone vs. fatores (Spearman) | Correlacao de cada item standalone com cada um dos 6 scores de fator. Identifica afinidades com fatores existentes | 6 itens x 6 fatores |")
+report_lines.append("")
+
 report_lines.append("### Ferramentas utilizadas")
 report_lines.append("- **Python 3.13** com pandas, numpy, scipy, scikit-learn, matplotlib, networkx")
 report_lines.append("- **scipy**: stats.spearmanr, cluster.hierarchy (linkage, dendrogram)")
@@ -826,10 +967,24 @@ for k_idx in range(best_k):
 report_lines.append(f"\nSilhouette score para k={best_k}: **{best_sil:.3f}**")
 report_lines.append("(Analise formal de segmentacao sera feita nas Fases 5-6 pelo analista SEGMENTATION)\n")
 
+# --- Standalone details ---
+report_lines.append(f"\n## Detalhes — Itens standalone vs. fatores\n")
+report_lines.append("| Item standalone | " + " | ".join(factor_labels_short) + " |")
+report_lines.append("|-----------------|" + "|".join(["---"] * 6) + "|")
+for sc in STANDALONE_COLS:
+    vals = " | ".join(f"{float(standalone_vs_factors.loc[sc, fc]):.3f}" for fc in FACTOR_COLS)
+    report_lines.append(f"| {STANDALONE_LABELS[sc]} | {vals} |")
+
+report_lines.append(f"\n## Detalhes — Correlacoes entre itens standalone\n")
+report_lines.append("| Item A | Item B | Spearman rho |")
+report_lines.append("|--------|--------|-------------|")
+for a, b, r in standalone_pairs:
+    report_lines.append(f"| {a} | {b} | {r:.3f} |")
+
 # --- Charts list ---
-report_lines.append("---\n")
+report_lines.append("\n---\n")
 report_lines.append("## Graficos exploratorios\n")
-report_lines.append("Todos em `outputs/figures/exploratory/`:\n")
+report_lines.append("Todos em `outputs/figures/exploratory/phase3/`:\n")
 chart_list = [
     ("11_correlation_heatmap_items.png", "Quais fontes de prazer andam juntas?"),
     ("12_correlation_heatmap_factors.png", "Como as categorias de prazer se relacionam?"),
@@ -843,9 +998,21 @@ chart_list = [
     ("20_boxplots_factors.png", "Como os fatores se comparam entre si?"),
     ("21_tsne_respondents.png", "Existem perfis naturais de respondentes?"),
     ("22_silhouette_elbow.png", "Qual o numero otimo de clusters de respondentes?"),
+    ("23_standalone_items_analysis.png", "Onde os 6 itens sem fator se encaixam?"),
 ]
 for fname, question in chart_list:
     report_lines.append(f"- `{fname}` — {question}")
+
+# --- Reusable artifacts ---
+report_lines.append("\n---\n")
+report_lines.append("## Artefatos reutilizaveis\n")
+report_lines.append("Dados intermediarios salvos em `data/processed/` para consumo nas fases seguintes:\n")
+report_lines.append("| Arquivo | Conteudo | Dimensoes |")
+report_lines.append("|---------|----------|-----------|")
+report_lines.append(f"| `phase3_corr_items.csv` | Matriz de correlacao Spearman entre itens | 37 x 37 |")
+report_lines.append(f"| `phase3_corr_factors.csv` | Matriz de correlacao Spearman entre fatores | 6 x 6 |")
+report_lines.append(f"| `phase3_pca_loadings.csv` | Loadings dos itens nos componentes retidos pela PCA | 37 x {n_components_show} |")
+report_lines.append(f"| `phase3_anomaly_flags.csv` | Flags por respondente: straight-liner, baixa variancia, outlier Mahalanobis | {N} x 4 |")
 
 report_lines.append(f"\n---\n")
 report_lines.append(f"*Gerado a partir de `data/processed/clean.csv` — N = {N:,} | Seed = {SEED}*\n")

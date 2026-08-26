@@ -67,6 +67,12 @@ anotações de disponibilidade de horário.
 8. **Reprodutibilidade.** Toda figura e todo número em um relatório deve ser
    regenerável rodando o script correspondente em `scripts/`. Fixe seeds
    aleatórias. Faça commit no git ao fim de cada fase aprovada.
+9. **Artefatos reutilizáveis.** Toda fase que calcula dados intermediários
+   (estatísticas, matrizes, flags, scores) deve salvá-los como CSVs em
+   `data/processed/` com prefixo `phaseN_`. Isso permite que fases seguintes
+   consumam resultados sem recalcular. Listar os artefatos no relatório da fase.
+10. **Gráficos organizados por fase.** Gráficos exploratórios ficam em
+    `outputs/figures/exploratory/<phaseN>/`. Cada fase tem sua subpasta.
 
 ## FATOS SOBRE OS DADOS — verificados antes do início
 
@@ -119,16 +125,17 @@ anotações de disponibilidade de horário.
 ## ARQUITETURA
 
 ```
-data/raw/        CSV original — SOMENTE LEITURA, nunca modificado, no .gitignore
-data/processed/  dados limpos e anonimizados, gerados pela Fase 1
-config/          instrument.yaml — tudo que é específico desta ferramenta
-src/             funções genéricas e reutilizáveis (cleaning, descriptive, eda,
-                 analysts/{relational,comparative,predictive,structural,
-                 segmentation,distributional}.py, integrator, viz)
-scripts/         um runner por fase (phase1_cleaning.py, ...)
-outputs/reports/ relatório Markdown por fase e por hipótese
-outputs/figures/ PNGs finais
-outputs/insights/insight_bank.md  ← produto final
+data/raw/            CSV original — SOMENTE LEITURA, nunca modificado, no .gitignore
+data/processed/      dados limpos + artefatos reutilizáveis (phaseN_*.csv)
+config/              instrument.yaml — tudo que é específico desta ferramenta
+src/                 funções genéricas e reutilizáveis (cleaning, descriptive, eda,
+                     analysts/{relational,comparative,predictive,structural,
+                     segmentation,distributional}.py, integrator, viz)
+scripts/             um runner por fase (phase1_cleaning.py, ...)
+outputs/reports/     relatório Markdown por fase e por hipótese
+outputs/figures/exploratory/<phaseN>/  gráficos de trabalho, organizados por fase
+outputs/figures/final/                 PNGs finais estilo Statista
+outputs/insights/insight_bank.md       ← produto final
 ```
 
 - Lógica genérica vai em `src/` e lê tudo que é específico da ferramenta de

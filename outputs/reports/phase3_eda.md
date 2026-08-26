@@ -63,6 +63,12 @@ para a Fase 4.
 | Baixa variabilidade | Respondentes com no maximo 2 valores distintos (nunique <= 2) | Todos os respondentes |
 | Distancia de Mahalanobis | Distancia multivariada ao centroide. Outliers = acima do P99. Identifica perfis de resposta raros | Todos os respondentes |
 
+### 10. Analise dos itens standalone
+| Metodo | Descricao | Aplicado a |
+|--------|-----------|------------|
+| Correlacao inter-standalone (Spearman) | Matriz 6x6 de correlacoes entre os itens sem fator. Verifica se formam agrupamentos entre si | 6 itens standalone |
+| Correlacao standalone vs. fatores (Spearman) | Correlacao de cada item standalone com cada um dos 6 scores de fator. Identifica afinidades com fatores existentes | 6 itens x 6 fatores |
+
 ### Ferramentas utilizadas
 - **Python 3.13** com pandas, numpy, scipy, scikit-learn, matplotlib, networkx
 - **scipy**: stats.spearmanr, cluster.hierarchy (linkage, dendrogram)
@@ -143,6 +149,11 @@ Cada observacao e uma pista, nao uma conclusao. O formato e:
 
 **Possivel pergunta:** Os outliers multivariados representam perfis genuinamente atipicos ou erros de resposta?
 
+### O-14
+**Observacao:** Os 6 itens standalone tem correlacao media entre si de 0.14. O par mais correlacionado e Laughing / humor ↔ Sound / music (rho=0.36). O item standalone mais associado a um fator e Being in nature com Nobre (rho=0.33).
+
+**Possivel pergunta:** Os itens standalone deveriam ser integrados a fatores existentes, formar um novo fator, ou permanecer independentes?
+
 ---
 
 ## Detalhes — Correlacoes entre fatores
@@ -210,11 +221,43 @@ Cada observacao e uma pista, nao uma conclusao. O formato e:
 Silhouette score para k=2: **0.114**
 (Analise formal de segmentacao sera feita nas Fases 5-6 pelo analista SEGMENTATION)
 
+
+## Detalhes — Itens standalone vs. fatores
+
+| Item standalone | Interpessoal | Emocionante | Nobre | Reputacional | Sensorial | Intelectual |
+|-----------------|---|---|---|---|---|---|
+| Laughing / humor | 0.329 | 0.189 | 0.209 | 0.142 | 0.317 | 0.163 |
+| Being in nature | 0.246 | 0.089 | 0.333 | -0.033 | 0.288 | 0.261 |
+| Sound / music | 0.193 | 0.143 | 0.193 | 0.050 | 0.331 | 0.279 |
+| Interacting with animals | 0.168 | 0.116 | 0.183 | -0.011 | 0.271 | 0.132 |
+| Playing games | 0.089 | 0.142 | 0.047 | 0.129 | 0.106 | 0.052 |
+| Sexual arousal | 0.167 | 0.250 | 0.066 | 0.212 | 0.174 | 0.117 |
+
+## Detalhes — Correlacoes entre itens standalone
+
+| Item A | Item B | Spearman rho |
+|--------|--------|-------------|
+| Laughing / humor | Sound / music | 0.356 |
+| Being in nature | Interacting with animals | 0.245 |
+| Being in nature | Sound / music | 0.188 |
+| Laughing / humor | Interacting with animals | 0.177 |
+| Laughing / humor | Being in nature | 0.176 |
+| Laughing / humor | Playing games | 0.165 |
+| Sound / music | Interacting with animals | 0.159 |
+| Laughing / humor | Sexual arousal | 0.154 |
+| Playing games | Sexual arousal | 0.131 |
+| Sound / music | Sexual arousal | 0.123 |
+| Sound / music | Playing games | 0.104 |
+| Interacting with animals | Playing games | 0.080 |
+| Being in nature | Sexual arousal | 0.062 |
+| Being in nature | Playing games | -0.009 |
+| Interacting with animals | Sexual arousal | -0.005 |
+
 ---
 
 ## Graficos exploratorios
 
-Todos em `outputs/figures/exploratory/`:
+Todos em `outputs/figures/exploratory/phase3/`:
 
 - `11_correlation_heatmap_items.png` — Quais fontes de prazer andam juntas?
 - `12_correlation_heatmap_factors.png` — Como as categorias de prazer se relacionam?
@@ -228,6 +271,20 @@ Todos em `outputs/figures/exploratory/`:
 - `20_boxplots_factors.png` — Como os fatores se comparam entre si?
 - `21_tsne_respondents.png` — Existem perfis naturais de respondentes?
 - `22_silhouette_elbow.png` — Qual o numero otimo de clusters de respondentes?
+- `23_standalone_items_analysis.png` — Onde os 6 itens sem fator se encaixam?
+
+---
+
+## Artefatos reutilizaveis
+
+Dados intermediarios salvos em `data/processed/` para consumo nas fases seguintes:
+
+| Arquivo | Conteudo | Dimensoes |
+|---------|----------|-----------|
+| `phase3_corr_items.csv` | Matriz de correlacao Spearman entre itens | 37 x 37 |
+| `phase3_corr_factors.csv` | Matriz de correlacao Spearman entre fatores | 6 x 6 |
+| `phase3_pca_loadings.csv` | Loadings dos itens nos componentes retidos pela PCA | 37 x 10 |
+| `phase3_anomaly_flags.csv` | Flags por respondente: straight-liner, baixa variancia, outlier Mahalanobis | 6587 x 4 |
 
 ---
 

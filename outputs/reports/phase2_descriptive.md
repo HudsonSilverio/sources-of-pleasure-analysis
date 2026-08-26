@@ -348,7 +348,7 @@ O que importa e a **magnitude** do desvio, nao o p-valor.
 
 ## Graficos exploratórios
 
-Todos em `outputs/figures/exploratory/`:
+Todos em `outputs/figures/exploratory/phase2/`:
 
 - `01_items_ranked_by_mean.png` — Quais fontes de prazer sao mais valorizadas?
 - `02_factors_ranked_by_mean.png` — Qual categoria de prazer domina?
