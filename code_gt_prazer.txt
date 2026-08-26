@@ -1,0 +1,733 @@
+*header: Your Greatest Sources of Pleasure
+
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/WomanKissingCat_Getty_1440.jpeg
+
+Different people get different amounts of pleasure from different things.
+
+For instance, some people get lots of pleasure from food, whereas other people get lots of pleasure from art and entertainment, and other people get pleasure from caring for a pet or tending their garden.
+
+We ran two studies on a total of 600 people in the U.S. asking them (1) how much pleasure they got from many different possible sources of pleasure and (2) to list other sources they found pleasure in that weren't included in our list.
+
+Based on that study, we have created this assessment that aims to help you identify what *your greatest Sources of Pleasure in life are* and reflect on how to add more pleasure to your life. It will also help you see how similar and different you are to other people with regard to where your enjoyment comes from.
+*program: Clearer Thinking - New Privacy Policy
+*button: Start!
+
+>> currentProgramName = "Sources of Pleasure"
+*program: ClearerThinking accepted privacy policy
+>> temp_scale = [["Totally agree", 3], ["Agree", 2], ["Somewhat agree", 1], ["Neither agree nor disagree", 0], ["Somewhat disagree", -1], ["Disagree", -2],  ["Totally disagree", -3]]
+>>in_progressIncrement = 1/42
+
+>>temp_individualScores = []
+>>temp_individualLabels = []
+
+For this assessment, you will be presented with different statements. Please state your level of agreement with each of them.
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_architecture.png
+*question: One of the things I find most pleasurable in life is *seeing things of beauty* (e.g, looking at art, beautiful architecture or sculpture, looking at beautiful photographs or beautiful clothes, etc.)
+	*answers: temp_scale
+	*save: p_seeingBeauty
+>>temp_individualScores.add(p_seeingBeauty)
+>>temp_individualLabels.add("seeingBeauty")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_winning.png
+*question: One of the things I find most pleasurable in life is *competition or winning* (e.g, beating others at competitive sports or games, outcompeting others in my work, etc.)
+	*answers: temp_scale
+	*save: p_competition
+>>temp_individualScores.add(p_competition)
+>>temp_individualLabels.add("competition")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_fast.png
+*question: One of the things I find most pleasurable in life is *high intensity situations that get my heart beating fast* (e.g., giving an impromptu speech in front of an audience, having to suddenly make intense decisions with time pressure, a puzzle game with a count down timer where you are racing to win, etc.)
+	*answers: temp_scale
+	*save: p_exciting
+>>temp_individualScores.add(p_exciting)
+>>temp_individualLabels.add("exciting")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_imagination.png
+*question: One of the things I find most pleasurable in life is *using my imagination* (e.g, imagining things in my mind, visualizing scenarios, etc.)
+	*answers: temp_scale
+	*save: p_imagination
+>>temp_individualScores.add(p_imagination)
+>>temp_individualLabels.add("imagination")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_relax.png
+*question: One of the things I find most pleasurable in life is *relaxation activities* (e.g, lying on the beach on a sunny day, napping or drifting off to sleep, going to a relaxing spa, sitting at a peaceful cafe, just enjoying having nothing to do, etc.)
+	*answers: temp_scale
+	*save: p_relax
+>>temp_individualScores.add(p_relax)
+>>temp_individualLabels.add("relax")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_animals.png
+*question: One of the things I find most pleasurable in life is *interacting with animals* (e.g, spending time with my dog or cat, training my horse, etc.)
+	*answers: temp_scale
+	*save: p_animals
+>>temp_individualScores.add(p_animals)
+>>temp_individualLabels.add("animals")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_belonging.png
+*question: One of the things I find most pleasurable in life is *feeling connected to a group I'm part of* (e.g., school alumni, people with the same cultural background, etc.)
+	*answers: temp_scale
+	*save: p_belonging
+>>temp_individualScores.add(p_belonging)
+>>temp_individualLabels.add("belonging")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_liked.png
+*question: One of the things I find most pleasurable in life is *being liked by others* (e.g, when I can tell someone likes me a lot, someone giving me a compliment, etc.)
+	*answers: temp_scale
+	*save: p_likable
+>>temp_individualScores.add(p_likable)
+>>temp_individualLabels.add("likable")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_game.png
+*question: One of the things I find most pleasurable in life is *playing one of my favorite games* (e.g, a board game, a card game, a video game, a computer game, a physical game, etc.)
+	*answers: temp_scale
+	*save: p_game
+>>temp_individualScores.add(p_game)
+>>temp_individualLabels.add("game")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_community.png
+*question: One of the things I find most pleasurable in life is *taking actions to support my community* (e.g., being involved in the city council, volunteering at the fire department, participating in neighborhood cleanups, conservation projects, etc.)
+	*answers: temp_scale
+	*save: p_community
+>>temp_individualScores.add(p_community)
+>>temp_individualLabels.add("community")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_art.png
+*question: One of the things I find most pleasurable in life is *creativity* (e.g, creative expression, creative writing, creating art, creating music, decorating, creating custom objects, etc.)
+	*answers: temp_scale
+	*save: p_creative
+>>temp_individualScores.add(p_creative)
+>>temp_individualLabels.add("creative")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_love.png
+*question: One of the things I find most pleasurable in life is *the feeling of loving or being loved* (e.g, having a feeling of love for another person, knowing someone loves me, falling in love, "new relationship energy", etc.)
+	*answers: temp_scale
+	*save: p_loving
+>>temp_individualScores.add(p_loving)
+>>temp_individualLabels.add("loving")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_spa.png
+*question: One of the things I find most pleasurable in life is *non-sexual touch or physical sensations* (e.g, soft blankets, hot tubs, massage, sitting by a warm fire, platonic cuddling, hugs, etc.)
+	*answers: temp_scale
+	*save: p_touch
+>>temp_individualScores.add(p_touch)
+>>temp_individualLabels.add("touch")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_rollercoaster.png
+*question: One of the things I find most pleasurable in life is *high-adrenaline* activities (e.g., roller coasters, sky diving, etc.)
+	*answers: temp_scale
+	*save: p_adrenaline
+>>temp_individualScores.add(p_adrenaline)
+>>temp_individualLabels.add("adrenaline")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_learn.png
+*question: One of the things I find most pleasurable in life is *learning* (e.g, reading educational information, practicing skills in order to improve, taking classes, informative non-fiction books, etc.)
+	*answers: temp_scale
+	*save: p_learning
+>>temp_individualScores.add(p_learning)
+>>temp_individualLabels.add("learning")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_sex.png
+*question: One of the things I find most pleasurable in life is *sexual arousal* (e.g, sex, pornography, masturbation, sexy romance novels, thinking about sexual fantasies, etc.)
+	*answers: temp_scale
+	*save: p_sex
+>>temp_individualScores.add(p_sex)
+>>temp_individualLabels.add("sex")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_help.png
+*question: One of the things I find most pleasurable in life is *helping other people* (e.g., giving people advice, solving a problem for someone else, etc.)
+	*answers: temp_scale
+	*save: p_helping
+>>temp_individualScores.add(p_helping)
+>>temp_individualLabels.add("helping")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_nature.png
+*question: One of the things I find most pleasurable in life is *being in nature* (e.g, walking in nature, observing wild animals, looking out at nature, watching the sunrise, etc.)
+	*answers: temp_scale
+	*save: p_nature
+>>temp_individualScores.add(p_nature)
+>>temp_individualLabels.add("nature")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_party.png
+*question: One of the things I find most pleasurable in life is *letting loose or acting wild or partying* (e.g, having unrestrained fun, acting uninhibited, going clubbing all night, etc.)
+	*answers: temp_scale
+	*save: p_partying
+>>temp_individualScores.add(p_partying)
+>>temp_individualLabels.add("partying")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_eat.png
+*question: One of the things I find most pleasurable in life is *taste* (e.g, food, beverages, etc.)
+	*answers: temp_scale
+	*save: p_taste
+>>temp_individualScores.add(p_taste)
+>>temp_individualLabels.add("taste")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_charity.png
+*question: One of the things I find most pleasurable in life is *charitable or altruistic activities* (e.g, volunteering at a shelter for abused women, taking an action that I think helps improve the world, donating money to a good cause, helping save someone's life, standing up for what I believe, etc.)
+	*answers: temp_scale
+	*save: p_charity
+>>temp_individualScores.add(p_charity)
+>>temp_individualLabels.add("charity")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_power.png
+*question: One of the things I find most pleasurable in life is *being in a position of authority or power, or having others treat me with great respect* (e.g, having others look up to me, having power to choose what others do, having other people defer to my opinion, etc.)
+	*answers: temp_scale
+	*save: p_power
+>>temp_individualScores.add(p_power)
+>>temp_individualLabels.add("power")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_mirror.png
+*question: One of the things I find most pleasurable in life is *being attractive* (e.g, having others find me good-looking, wearing or buying clothes that make me look good, having others find me sexy, etc.)
+	*answers: temp_scale
+	*save: p_attractive
+>>temp_individualScores.add(p_attractive)
+>>temp_individualLabels.add("attractive")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_friends.png
+*question: One of the things I find most pleasurable in life is *spending quality time with loved ones that makes us feel connected to each other* (e.g., hanging out with my friends, watching my kids play, etc.)
+	*answers: temp_scale
+	*save: p_qualityTime
+>>temp_individualScores.add(p_qualityTime)
+>>temp_individualLabels.add("qualityTime")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_recognition.png
+*question: One of the things I find most pleasurable in life is *getting social recognition for my performance or accomplishments* (e.g, people telling me I did a great job, getting a standing ovation after performing, winning an award, my work being featured in a magazine, being praised on TV, etc.)
+	*answers: temp_scale
+	*save: p_recognition
+>>temp_individualScores.add(p_recognition)
+>>temp_individualLabels.add("recognition")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_smell.png
+*question: One of the things I find most pleasurable in life is *smell* (e.g, perfume, cologne, scented candles, the smell of my lover, the smell of food, etc.)
+	*answers: temp_scale
+	*save: p_smell
+>>temp_individualScores.add(p_smell)
+>>temp_individualLabels.add("smell")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_risky.png
+*question: One of the things I find most pleasurable in life is *narrowly escaping a risky situation without having anything bad happen* (e.g., surviving a bear encounter, doing something sneaky without being caught, running across a busy street with no crosswalk, etc.)
+	*answers: temp_scale
+	*save: p_risk
+>>temp_individualScores.add(p_risk)
+>>temp_individualLabels.add("risk")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_conversation.png
+*question: One of the things I find most pleasurable in life is *feeling a deep connection with a person who I'm interacting with* (e.g., having a deep conversation with a friend, discovering the many things I have in common with somebody I didn't know so well, etc.)
+	*answers: temp_scale
+	*save: p_connection
+>>temp_individualScores.add(p_connection)
+>>temp_individualLabels.add("connection")
+	
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_prayer.png
+*question: One of the things I find most pleasurable in life is *spiritual feelings, religious feelings, or feeling connection with the divine* (e.g, prayer, religious rapture, spiritual rituals, etc.)
+	*answers: temp_scale
+	*save: p_spiritual
+>>temp_individualScores.add(p_spiritual)
+>>temp_individualLabels.add("spiritual")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_fame.png
+*question: One of the things I find most pleasurable in life is *having high status* (e.g, having others think I'm cool, having others want to be like me, having others envy me, etc.)
+	*answers: temp_scale
+	*save: p_status
+>>temp_individualScores.add(p_status)
+>>temp_individualLabels.add("status")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_music.png
+*question: One of the things I find most pleasurable in life is *sound* (e.g, music or other beautiful sounds)
+	*answers: temp_scale
+	*save: p_sound
+>>temp_individualScores.add(p_sound)
+>>temp_individualLabels.add("sound")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_laughing.png
+*question: One of the things I find most pleasurable in life is *laughing or enjoying humor* (e.g, watching comedy, hearing a great joke, laughing with friends, etc.)
+	*answers: temp_scale
+	*save: p_humor
+>>temp_individualScores.add(p_humor)
+>>temp_individualLabels.add("humor")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_scary.png
+*question: One of the things I find most pleasurable in life is *doing things that are frightening but fun* (e.g, watching scary movies, going to haunted houses or horror escape rooms, etc.)
+	*answers: temp_scale
+	*save: p_scary
+>>temp_individualScores.add(p_scary)
+>>temp_individualLabels.add("scary")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_silly.png
+*question: One of the things I find most pleasurable in life is *doing things with total spontaneity, even if it looks silly, childish or weird* (e.g., changing plans last minute if I want to, singing aloud on the street, acting without worrying what others will think, etc.)
+	*answers: temp_scale
+	*save: p_spontaneous
+>>temp_individualScores.add(p_spontaneous)
+>>temp_individualLabels.add("spontaneous")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_think.png
+*question: One of the things I find most pleasurable in life is *exploring ideas or thinking* (e.g, pondering concepts, analyzing, discussing ideas, trying to figure things out, trying to understand complex things, etc.)
+	*answers: temp_scale
+	*save: p_thinking
+>>temp_individualScores.add(p_thinking)
+>>temp_individualLabels.add("thinking")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_nurture.png
+*question: One of the things I find most pleasurable in life is *taking care of others* (e.g, nurturing a child, taking care of my romantic partner, taking care of a pet, etc.)
+	*answers: temp_scale
+	*save: p_caring
+>>temp_individualScores.add(p_caring)
+>>temp_individualLabels.add("caring")
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/noun_family.png
+*question: One of the things I find most pleasurable in life is *taking actions to support my family* (e.g., cooking nutritious food for my children, running errands for my parents, providing income for the household, etc. )
+	*answers: temp_scale
+	*save: p_supportFamily
+>>temp_individualScores.add(p_supportFamily)
+>>temp_individualLabels.add("supportFamily")
+
+
+>>in_namesToSort = temp_individualLabels
+>>in_valuesToSortBy = temp_individualScores
+*program: sort names and values - public
+
+>>selectFive = 0
+*if: out_sortedValues[6] = out_sortedValues[1]
+	>>selectFive = 1
+
+>>indItems = {"thinking"->"Exploring ideas or thinking", "creative"->"Creativity", "learning"->"Learning", "imagination"->"Using my imagination", "seeingBeauty"->"Seeing things of beauty", "touch"->"Non-sexual touch or physical sensations", "relax"->"Relaxation activities", "smell"->"Smell", "taste"->"Taste", "recognition"->"Getting social recognition for my performance or accomplishments", "status"->"Having high status", "power"->"Being in a position of authority or power, or having others treat me with great respect", "competition"->"Competition or winning", "likable"->"Being liked by others", "attractive"->"Being attractive", "spiritual"->"Spiritual feelings, religious feelings, or feeling connection with the divine", "charity"->"Charitable or altruistic activities", "caring"->"Taking care of others", "helping"->"Helping other people", "community"->"Taking actions to support my community", "supportFamily"->"Taking actions to support my family", "partying"->"Letting loose or acting wild or partying", "scary"->"Doing things that are frightening but fun", "exciting"->"High intensity situations that get my heart beating fast", "spontaneous"->"Doing things with total spontaneity, even if it looks silly, childish or weird", "adrenaline"->"High-adrenaline activities", "risk"->"Narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"Spending quality time with loved ones that makes us feel connected to each other", "belonging"->"Feeling connected to a group I'm part of", "connection"->"Feeling a deep connection with a person who I'm interacting with", "loving"->"The feeling of loving or being loved", "humor"->"Laughing or enjoying humor", "nature"->"Being in nature", "sound"->"Sound and music", "animals"->"Interacting with animals", "game"->"Playing one of my favorite games", "sex"->"Sexual activity"}
+
+--if there are more than five sources of pleasure with the highest score, have them choose their top five sources of pleasure
+*if: selectFive = 1
+	>>itemsToRank = []
+	>>counter = 1
+	*while: counter <=6
+		>>textToAdd = indItems[out_sortedNames[counter]]
+		>>labelToAdd = out_sortedNames[counter]
+		>>elementToAdd = [textToAdd, labelToAdd]
+		>>itemsToRank.add(elementToAdd)
+		>>counter = counter + 1
+		
+			
+	>>stillTheSame = 1
+	>>counter = 7
+	*while: stillTheSame = 1
+		*if: out_sortedValues[1] = out_sortedValues[counter]
+			>>elementToAdd = [indItems[out_sortedNames[counter]], out_sortedNames[counter]]
+			>>itemsToRank.add(elementToAdd)
+			>>counter = counter + 1
+		*if: not (out_sortedNames[1] = out_sortedNames[counter])
+			>>stillTheSame = 0
+			>>elementToAdd = ""
+
+	*program: sources of pleasure RANKING ITEMS
+	>>itemsToRank = ""
+	--selectedLabels
+	>>questionRankOneLabel = selectedLabels[1]
+	>>questionRankTwoLabel = selectedLabels[2] 
+	>>questionRankThreeLabel = selectedLabels[3]
+	>>questionRankFourLabel = selectedLabels[4]
+	>>questionRankFiveLabel = selectedLabels[5]
+	>>selectedLabels = ""
+
+
+--if the score of the sixth is different from the score of the first one, then the top five are the ones according to the sorting program
+*if: selectFive = 0
+	>>questionRankOneLabel = out_sortedNames[1]
+	>>questionRankTwoLabel = out_sortedNames[2] 
+	>>questionRankThreeLabel = out_sortedNames[3]
+	>>questionRankFourLabel = out_sortedNames[4]
+	>>questionRankFiveLabel = out_sortedNames[5]
+
+--remove large variables not needed anymore
+>>temp_scale = ""
+>>temp_individualScores = ""
+>>temp_individualLabels = ""
+>>in_namesToSort = ""
+>>in_valuesToSortBy = ""
+>>out_sortedValues = ""
+>>out_sortedNames = ""
+
+--these scores are on a -3 to 3 scale
+>>sop_interpersonal = (p_qualityTime + p_belonging + p_loving + p_connection)/4
+>>sop_thrilling = (p_risk + p_partying + p_adrenaline + p_scary + p_spontaneous + p_exciting)/6 
+>>sop_noble = (p_spiritual + p_supportFamily + p_charity + p_community + p_caring + p_helping)/6 
+>>sop_reputational = (p_recognition + p_status + p_attractive + p_power + p_likable + p_competition)/6 
+>>sop_sensorial = (p_touch + p_taste + p_smell + p_relax)/4 
+>>sop_intellectual = (p_thinking + p_creative + p_learning + p_imagination + p_seeingBeauty)/5 
+
+--scores in a 0 to 10 scale
+>>sop_interpersonal0to10 = (sop_interpersonal + 3) * (10/6)
+>>sop_thrilling0to10 = (sop_thrilling + 3) * (10/6)
+>>sop_noble0to10 = (sop_noble + 3) * (10/6)
+>>sop_reputational0to10 = (sop_reputational + 3) * (10/6)
+>>sop_sensorial0to10 = (sop_sensorial + 3) * (10/6)
+>>sop_intellectual0to10 = (sop_intellectual + 3) * (10/6)
+>>p_humor0to10 = (p_humor + 3) * (10/6)
+>>p_nature0to10 = (p_nature + 3) * (10/6)
+>>p_sound0to10 = (p_sound + 3) * (10/6)
+>>p_animals0to10 = (p_animals + 3) * (10/6)
+>>p_game0to10 = (p_game + 3) * (10/6)
+>>p_sex0to10 = (p_sex + 3) * (10/6)
+
+*program: update progress bar - public
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/SuccessfulPainter_Getty_1440.jpeg
+
+--*question: Before we give you a complete analysis of your Sources of Pleasure in your customized report, take a moment to look at your Top Five Sources of Pleasure and choose one of them for a thought exercise that will teach you how to increase your pleasure even more:
+
+Before we give you a complete analysis of your Sources of Pleasure in your customized report, let's do a thought exercise that will teach you how to increase your pleasure even more.
+
+*question: Take a look at your Top Five Sources of Pleasure and choose one for the exercise:
+	1. {indItems[questionRankOneLabel]}
+		>>selectedLabel1 = questionRankOneLabel
+	2. {indItems[questionRankTwoLabel]}
+		>>selectedLabel1 = questionRankTwoLabel
+	3. {indItems[questionRankThreeLabel]}
+		>>selectedLabel1 = questionRankThreeLabel
+	4. {indItems[questionRankFourLabel]}
+		>>selectedLabel1 = questionRankFourLabel
+	5. {indItems[questionRankFiveLabel]}
+		>>selectedLabel1 = questionRankFiveLabel
+	*save: selectedSource1
+	
+>>indItemsLow = {"thinking"->"exploring ideas or thinking", "creative"->"creativity", "learning"->"learning", "imagination"->"using my imagination", "seeingBeauty"->"seeing things of beauty", "touch"->"non-sexual touch or physical sensations", "relax"->"relaxation activities", "smell"->"smell", "taste"->"taste", "recognition"->"getting social recognition for my performance or accomplishments", "status"->"having high status", "power"->"being in a position of authority or power, or having others treat me with great respect", "competition"->"competition or winning", "likable"->"being liked by others", "attractive"->"being attractive", "spiritual"->"spiritual feelings, religious feelings, or feeling connection with the divine", "charity"->"charitable or altruistic activities", "caring"->"taking care of others", "helping"->"helping other people", "community"->"taking actions to support my community", "supportFamily"->"taking actions to support my family", "partying"->"letting loose or acting wild or partying", "scary"->"doing things that are frightening but fun", "exciting"->"high intensity situations that get my heart beating fast", "spontaneous"->"doing things with total spontaneity, even if it looks silly, childish or weird", "adrenaline"->"high-adrenaline activities", "risk"->"narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"spending quality time with loved ones that makes us feel connected to each other", "belonging"->"feeling connected to a group I'm part of", "connection"->"feeling a deep connection with a person who I'm interacting with", "loving"->"the feeling of loving or being loved", "humor"->"laughing or enjoying humor", "nature"->"being in nature", "sound"->"sound and music", "animals"->"interacting with animals", "game"->"playing one of my favorite games", "sex"->"sexual activity"}
+>>selectedSource1 = indItemsLow[selectedLabel1]
+>>indItemsLow = ""
+
+Take a moment to think about the pleasure you get out of *{selectedSource1}* and how often you get to experience it.
+
+*program: update progress bar - public
+*question: What would you need to do to increase the frequency of this experience in your life?
+	*type: paragraph
+	*save: moreOften1
+	*throwaway
+
+>>moreOften1 = moreOften1.encode("URL")
+
+
+*program: update progress bar - public
+
+Think now of ways that you can get more pleasure out of *{selectedSource1}*. Here are some examples:
+*list 
+	If you get pleasure from spending quality time with your family you may consider muting your electronic devices during that time to fully be present with them.
+	If you get pleasure from listening to classical music you could invest in good quality headphones.
+	If you get pleasure from supporting an NGO, you can reach out to them or their beneficiaries to learn about the impact of your contribution.
+	
+*question: What could you do to get more pleasure out of *{selectedSource1}*? 
+	*type: paragraph
+	*save: moreOfIt1
+	*throwaway
+
+>>moreOfIt1 = moreOfIt1.encode("URL")
+
+*program: update progress bar - public
+
+In some cases, you can use the pleasure that you find in some activities to improve other aspects of your life. These are some ideas:
+*list
+	If you are making a career move and you get pleasure from creativity, consider a job that requires you to use your imagination.
+	If you don't find the motivation to exercise but you get pleasure from listening to music, create a special playlist that you only listen to while working out.
+	If you are struggling to finish a project and you love going on roller coasters, plan to reward yourself with a trip to a theme park when you submit the project.
+
+*question: How can you use your pleasure in *{selectedSource1}* to improve your life?
+	*type: paragraph
+	*save: usePleasure1
+	*throwaway
+
+>>usePleasure1 = usePleasure1.encode("URL")
+
+>>reportLink = "https://www.guidedtrack.com/programs/u8snwa/run?IP={sop_interpersonal0to10}&TH={sop_thrilling0to10}&NO={sop_noble0to10}&RE={sop_reputational0to10}&SE={sop_sensorial0to10}&IN={sop_intellectual0to10}&Q1L={questionRankOneLabel}&Q2L={questionRankTwoLabel}&&Q3L={questionRankThreeLabel}&Q4L={questionRankFourLabel}&Q5L={questionRankFiveLabel}&HU={p_humor0to10}&NA={p_nature0to10}&SO={p_sound0to10}&AN={p_animals0to10}&GA={p_game0to10}&SX={p_sex0to10}&&SS1={selectedLabel1}&MOI1={moreOfIt1}&MOF1={moreOften1}&UP1={usePleasure1}"
+
+
+*image: https://1231047546.rsc.cdn77.org/images/Sources_of_Pleasure/ReadingBookNearLake_Getty_1440.jpeg
+That's it for the exercise!
+*question: Would you like to repeat this thought exercise on another one of your Top Sources of Pleasure?
+	Sounds good!
+	No, I'd rather see now my Assessment report
+		*goto: sop_emailPage
+
+--Do the exercise a second time
+>>sopToDisplay = [questionRankOneLabel, questionRankTwoLabel, questionRankThreeLabel, questionRankFourLabel, questionRankFiveLabel]
+>>sopToDisplay.erase(selectedLabel1)
+
+*question: Select another Source of Pleasure to do the thought exercise again:
+	{indItems[sopToDisplay[1]]}
+		>>selectedLabel2 = sopToDisplay[1]
+	{indItems[sopToDisplay[2]]}
+		>>selectedLabel2 = sopToDisplay[2]
+	{indItems[sopToDisplay[3]]}
+		>>selectedLabel2 = sopToDisplay[3]
+	{indItems[sopToDisplay[4]]}
+		>>selectedLabel2 = sopToDisplay[4]
+
+>>indItemsLow = {"thinking"->"exploring ideas or thinking", "creative"->"creativity", "learning"->"learning", "imagination"->"using my imagination", "seeingBeauty"->"seeing things of beauty", "touch"->"non-sexual touch or physical sensations", "relax"->"relaxation activities", "smell"->"smell", "taste"->"taste", "recognition"->"getting social recognition for my performance or accomplishments", "status"->"having high status", "power"->"being in a position of authority or power, or having others treat me with great respect", "competition"->"competition or winning", "likable"->"being liked by others", "attractive"->"being attractive", "spiritual"->"spiritual feelings, religious feelings, or feeling connection with the divine", "charity"->"charitable or altruistic activities", "caring"->"taking care of others", "helping"->"helping other people", "community"->"taking actions to support my community", "supportFamily"->"taking actions to support my family", "partying"->"letting loose or acting wild or partying", "scary"->"doing things that are frightening but fun", "exciting"->"high intensity situations that get my heart beating fast", "spontaneous"->"doing things with total spontaneity, even if it looks silly, childish or weird", "adrenaline"->"high-adrenaline activities", "risk"->"narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"spending quality time with loved ones that makes us feel connected to each other", "belonging"->"feeling connected to a group I'm part of", "connection"->"feeling a deep connection with a person who I'm interacting with", "loving"->"the feeling of loving or being loved", "humor"->"laughing or enjoying humor", "nature"->"being in nature", "sound"->"sound and music", "animals"->"interacting with animals", "game"->"playing one of my favorite games", "sex"->"sexual activity"}
+>>selectedSource2 = indItemsLow[selectedLabel2]
+>>indItemsLow = ""
+
+Think now about the pleasure you get out of *{selectedSource2}* and how often you get to experience it.
+*question: What would you need to do to increase the frequency of this experience in your life?
+	*type: paragraph
+	*save: moreOften2
+	*throwaway
+
+>>moreOften2 = moreOften2.encode("URL")
+
+
+Think now of ways that you can get more pleasure out of *{selectedSource2}*.
+*question: What could you do to get more pleasure out of it? 
+	*type: paragraph
+	*save: moreOfIt2
+	*throwaway
+
+>>moreOfIt2 = moreOfIt2.encode("URL")
+
+*question: How can you use your pleasure in *{selectedSource2}* to improve your life?
+	*type: paragraph
+	*save: usePleasure2
+	*throwaway
+
+>>usePleasure2 = usePleasure2.encode("URL")
+
+>>reportLink = "{reportLink}&SS2={selectedLabel2}&MOF2={moreOften2}&MOI2={moreOfIt2}&UP2={usePleasure2}"
+
+--do a third time?
+*question: Would you like to repeat this thought exercise on another one of your Top Sources of Pleasure?
+	Sounds good!
+	No, I'd rather see now my Assessment report
+		*goto: sop_emailPage
+
+--Do the exercise a second time
+>>sopToDisplay.erase(selectedLabel2)
+
+*question: Select another Source of Pleasure to do the thought exercise again:
+	{indItems[sopToDisplay[1]]}
+		>>selectedLabel3 = sopToDisplay[1]
+	{indItems[sopToDisplay[2]]}
+		>>selectedLabel3 = sopToDisplay[2]
+	{indItems[sopToDisplay[3]]}
+		>>selectedLabel3 = sopToDisplay[3]
+
+>>indItemsLow = {"thinking"->"exploring ideas or thinking", "creative"->"creativity", "learning"->"learning", "imagination"->"using my imagination", "seeingBeauty"->"seeing things of beauty", "touch"->"non-sexual touch or physical sensations", "relax"->"relaxation activities", "smell"->"smell", "taste"->"taste", "recognition"->"getting social recognition for my performance or accomplishments", "status"->"having high status", "power"->"being in a position of authority or power, or having others treat me with great respect", "competition"->"competition or winning", "likable"->"being liked by others", "attractive"->"being attractive", "spiritual"->"spiritual feelings, religious feelings, or feeling a connection with the divine", "charity"->"charitable or altruistic activities", "caring"->"taking care of others", "helping"->"helping other people", "community"->"taking actions to support my community", "supportFamily"->"taking actions to support my family", "partying"->"letting loose or acting wild or partying", "scary"->"doing things that are frightening but fun", "exciting"->"high intensity situations that get my heart beating fast", "spontaneous"->"doing things with total spontaneity, even if it looks silly, childish, or weird", "adrenaline"->"high-adrenaline activities", "risk"->"narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"spending quality time with loved ones that makes us feel connected to each other", "belonging"->"feeling connected to a group I'm part of", "connection"->"feeling a deep connection with a person who I'm interacting with", "loving"->"the feeling of loving or being loved", "humor"->"laughing or enjoying humor", "nature"->"being in nature", "sound"->"sound and music", "animals"->"interacting with animals", "game"->"playing one of my favorite games", "sex"->"sexual activity"}
+>>selectedSource3 = indItemsLow[selectedLabel3]
+>>indItemsLow = ""
+
+Think now about the pleasure you get out of *{selectedSource3}* and how often you get to experience it.
+*question: What would you need to do to increase the frequency of this experience in your life?
+	*type: paragraph
+	*save: moreOften3
+	*throwaway
+
+>>moreOften3 = moreOften3.encode("URL")
+
+
+Think now of ways that you can get more pleasure out of *{selectedSource3}*.
+*question: What could you do to get more pleasure out of it? 
+	*type: paragraph
+	*save: moreOfIt3
+	*throwaway
+
+>>moreOfIt3 = moreOfIt3.encode("URL")
+
+*question: How can you use your pleasure in *{selectedSource3}* to improve your life?
+	*type: paragraph
+	*save: usePleasure3
+	*throwaway
+
+>>usePleasure3 = usePleasure3.encode("URL")
+
+>>reportLink = "{reportLink}&SS3={selectedLabel3}&MOF3={moreOften3}&MOI3={moreOfIt3}&UP3={usePleasure3}"
+
+--fourth time
+*question: Would you like to repeat this thought exercise on another one of your Top Sources of Pleasure?
+	Sounds good!
+	No, I'd rather see now my Assessment report
+		*goto: sop_emailPage
+
+--Do the exercise a fourth time
+>>sopToDisplay.erase(selectedLabel3)
+
+*question: Select another Source of Pleasure to do the thought exercise again:
+	{indItems[sopToDisplay[1]]}
+		>>selectedLabel4 = sopToDisplay[1]
+	{indItems[sopToDisplay[2]]}
+		>>selectedLabel4 = sopToDisplay[2]
+
+>>indItemsLow = {"thinking"->"exploring ideas or thinking", "creative"->"creativity", "learning"->"learning", "imagination"->"using my imagination", "seeingBeauty"->"seeing things of beauty", "touch"->"non-sexual touch or physical sensations", "relax"->"relaxation activities", "smell"->"smell", "taste"->"taste", "recognition"->"getting social recognition for my performance or accomplishments", "status"->"having high status", "power"->"being in a position of authority or power, or having others treat me with great respect", "competition"->"competition or winning", "likable"->"being liked by others", "attractive"->"being attractive", "spiritual"->"spiritual feelings, religious feelings, or feeling connection with the divine", "charity"->"charitable or altruistic activities", "caring"->"taking care of others", "helping"->"helping other people", "community"->"taking actions to support my community", "supportFamily"->"taking actions to support my family", "partying"->"letting loose or acting wild or partying", "scary"->"doing things that are frightening but fun", "exciting"->"high intensity situations that get my heart beating fast", "spontaneous"->"doing things with total spontaneity, even if it looks silly, childish or weird", "adrenaline"->"high-adrenaline activities", "risk"->"narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"spending quality time with loved ones that makes us feel connected to each other", "belonging"->"feeling connected to a group I'm part of", "connection"->"feeling a deep connection with a person who I'm interacting with", "loving"->"the feeling of loving or being loved", "humor"->"laughing or enjoying humor", "nature"->"being in nature", "sound"->"sound and music", "animals"->"interacting with animals", "game"->"playing one of my favorite games", "sex"->"sexual activity"}
+>>selectedSource4 = indItemsLow[selectedLabel4]
+>>indItemsLow = ""
+
+Think now about the pleasure you get out of *{selectedSource4}* and how often you get to experience it.
+*question: What would you need to do to increase the frequency of this experience in your life?
+	*type: paragraph
+	*save: moreOften4
+	*throwaway
+
+>>moreOften4 = moreOften4.encode("URL")
+
+
+Think now of ways that you can get more pleasure out of *{selectedSource4}*.
+*question: What could you do to get more pleasure out of it? 
+	*type: paragraph
+	*save: moreOfIt4
+	*throwaway
+
+>>moreOfIt4 = moreOfIt4.encode("URL")
+
+*question: How can you use your pleasure in *{selectedSource4}* to improve your life?
+	*type: paragraph
+	*save: usePleasure4
+	*throwaway
+
+>>usePleasure4 = usePleasure4.encode("URL")
+
+>>reportLink = "{reportLink}&SS4={selectedLabel4}&MOF4={moreOften4}&MOI4={moreOfIt4}&UP4={usePleasure4}"
+
+--last time
+*question: Would you like to repeat this thought exercise on your the last one of your Top Five Sources of Pleasure?
+	Sounds good!
+	No, I'd rather see now my Assessment report
+		*goto: sop_emailPage
+
+>>sopToDisplay.erase(selectedLabel4)
+
+>>selectedLabel5 = sopToDisplay[1]
+
+>>indItemsLow = {"thinking"->"exploring ideas or thinking", "creative"->"creativity", "learning"->"learning", "imagination"->"using my imagination", "seeingBeauty"->"seeing things of beauty", "touch"->"non-sexual touch or physical sensations", "relax"->"relaxation activities", "smell"->"smell", "taste"->"taste", "recognition"->"getting social recognition for my performance or accomplishments", "status"->"having high status", "power"->"being in a position of authority or power, or having others treat me with great respect", "competition"->"competition or winning", "likable"->"being liked by others", "attractive"->"being attractive", "spiritual"->"spiritual feelings, religious feelings, or feeling connection with the divine", "charity"->"charitable or altruistic activities", "caring"->"taking care of others", "helping"->"helping other people", "community"->"taking actions to support my community", "supportFamily"->"taking actions to support my family", "partying"->"letting loose or acting wild or partying", "scary"->"doing things that are frightening but fun", "exciting"->"high intensity situations that get my heart beating fast", "spontaneous"->"doing things with total spontaneity, even if it looks silly, childish or weird", "adrenaline"->"high-adrenaline activities", "risk"->"narrowly escaping a risky situation without having anything bad happen", "qualityTime"->"spending quality time with loved ones that makes us feel connected to each other", "belonging"->"feeling connected to a group I'm part of", "connection"->"feeling a deep connection with a person who I'm interacting with", "loving"->"the feeling of loving or being loved", "humor"->"laughing or enjoying humor", "nature"->"being in nature", "sound"->"sound and music", "animals"->"interacting with animals", "game"->"playing one of my favorite games", "sex"->"sexual activity"}
+>>selectedSource5 = indItemsLow[selectedLabel5]
+>>indItemsLow = ""
+
+Think now about the pleasure you get out of *{selectedSource5}* and how often you get to experience it.
+*question: What would you need to do to increase the frequency of this experience in your life?
+	*type: paragraph
+	*save: moreOften5
+	*throwaway
+
+>>moreOften5 = moreOften5.encode("URL")
+
+
+Think now of ways that you can get more pleasure out of *{selectedSource5}*.
+*question: What could you do to get more pleasure out of it? 
+	*type: paragraph
+	*save: moreOfIt5
+	*throwaway
+
+>>moreOfIt5 = moreOfIt5.encode("URL")
+
+*question: How can you use your pleasure in *{selectedSource5}* to improve your life?
+	*type: paragraph
+	*save: usePleasure5
+	*throwaway
+
+>>usePleasure5 = usePleasure5.encode("URL")
+
+>>reportLink = "{reportLink}&SS5={selectedLabel5}&MOF5={moreOften5}&MOI5={moreOfIt5}&UP5={usePleasure5}"
+
+
+*trigger: changePage
+	*send: {"page"->"emailed_report_strong_subscribe"}
+	
+*label: sop_emailPage
+
+>>indItems = ""
+*program: update progress bar - public
+
+	
+>> mailchimpInterest = "ec729c517b"
+
+*program: MailChimp - Subscribe - quick emailed report
+
+*if: not theirEmail
+	*goto: afterEmailSend
+*if: invalidEmail
+	*if: invalidEmail = 1
+		*goto: afterEmailSend
+
+*if: theirEmail	
+	*if: not alreadySentReport
+		*email
+			*to: {theirEmail}
+			*subject: Your Sources of Pleasure Assessment results
+			*body
+				Earlier you took the Sources of Pleasure Assessment, put together by [ClearerThinking.org|https://www.clearerthinking.org/].
+				
+				[Click here to view your results.|{reportLink}]
+				
+				Find more tools, tests, and teachings to change your habits, make better decisions, and achieve your goals at [ClearerThinking.org|https://www.clearerthinking.org/].
+
+		>> alreadySentReport = 1		
+		*program: MailChimp - beta tester and user interview sign up
+
+*label: afterEmailSend
+	
+-- *if: not isTester	
+-- 	In a moment we're going to give you your customized report based on all your answers!
+	
+-- 	*question: Please enter your email address so we can email your customized report based on your answers.
+-- 		*tip:Your information will be kept secure and will never be shared with third parties. You may receive occasional updates about how to improve your decisions and better achieve your goals, which you can unsubscribe from any time with one click. If you would prefer not to receive email, leave the box blank. Either way, you can view your report in your browser. When you enter your email address, you should receive your custom report via email within minutes, but in periods of peak traffic it could take hours.
+-- 		*blank
+-- 		*before: Email:
+-- 		*save: theirEmail
+-- 		*throwaway
+
+
+-- 	*if: not theirEmail=""
+-- 		*email
+-- 			*to: {theirEmail}
+-- 			*subject: Your Sources of Pleasure Assessment results
+-- 			*body
+-- 				Earlier you took the Sources of Pleasure Assessment, put together by [ClearerThinking.org|https://www.clearerthinking.org/].
+				
+-- 				[Click here to view your results.|{reportLink}]
+				
+-- 				Find more tools, tests, and teachings to change your habits, make better decisions, and achieve your goals at [ClearerThinking.org|https://www.clearerthinking.org/].
+
+*progress: hide
+
+>>isRunningMainProgram = 1
+
+*trigger: changePage
+	*send: {"page"->"begin_report"}
+	
+*settings
+	*back: yes 
+	
+*program: sources of pleasure REPORT
+
+*program: Clearer Thinking - Run before credits hook
+
+*header: Credits
+*Concept by*: [Spencer Greenberg|https://www.spencergreenberg.com]
+*Study conducted by*: Spencer Greenberg & Belén Cobeta
+*Assessment written by*: Belén Cobeta
+

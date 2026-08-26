@@ -1,0 +1,326 @@
+# ==============================================================================
+# instrument.yaml — Sources of Pleasure (ClearerThinking.org)
+# Fonte da verdade estruturada para toda a pipeline de análise.
+# Extraído de: code_gt_prazer.txt (código GuidedTrack)
+# ==============================================================================
+
+# --- Metadados do instrumento ---
+instrumento:
+  nome: "Your Greatest Sources of Pleasure"
+  organizacao: "ClearerThinking.org"
+  plataforma: "GuidedTrack"
+  autores:
+    conceito: "Spencer Greenberg"
+    estudo: "Spencer Greenberg & Belén Cobeta"
+    assessment: "Belén Cobeta"
+  base_do_estudo: "Dois estudos com 600 pessoas nos EUA"
+  respondentes: "Visitantes autosselecionados do ClearerThinking.org (amostra de conveniência online)"
+
+# --- Escala de resposta ---
+escala:
+  tipo: "Likert de 7 pontos"
+  minimo: -3
+  maximo: 3
+  rotulos:
+    3: "Totally agree"
+    2: "Agree"
+    1: "Somewhat agree"
+    0: "Neither agree nor disagree"
+    -1: "Somewhat disagree"
+    -2: "Disagree"
+    -3: "Totally disagree"
+  nota: >
+    Cada item é precedido por "One of the things I find most pleasurable
+    in life is..." seguido da fonte de prazer específica.
+
+# --- 37 Itens analíticos (colunas p_*) ---
+# Ordem: sequência de apresentação no assessment
+itens:
+  - variavel: p_seeingBeauty
+    rotulo: "Seeing beauty"
+    texto: "Seeing things of beauty (e.g, looking at art, beautiful architecture or sculpture, looking at beautiful photographs or beautiful clothes, etc.)"
+    fator: intellectual
+
+  - variavel: p_competition
+    rotulo: "Competition / winning"
+    texto: "Competition or winning (e.g, beating others at competitive sports or games, outcompeting others in my work, etc.)"
+    fator: reputational
+
+  - variavel: p_exciting
+    rotulo: "High intensity situations"
+    texto: "High intensity situations that get my heart beating fast (e.g., giving an impromptu speech in front of an audience, having to suddenly make intense decisions with time pressure, a puzzle game with a count down timer where you are racing to win, etc.)"
+    fator: thrilling
+
+  - variavel: p_imagination
+    rotulo: "Using imagination"
+    texto: "Using my imagination (e.g, imagining things in my mind, visualizing scenarios, etc.)"
+    fator: intellectual
+
+  - variavel: p_relax
+    rotulo: "Relaxation"
+    texto: "Relaxation activities (e.g, lying on the beach on a sunny day, napping or drifting off to sleep, going to a relaxing spa, sitting at a peaceful cafe, just enjoying having nothing to do, etc.)"
+    fator: sensorial
+
+  - variavel: p_animals
+    rotulo: "Interacting with animals"
+    texto: "Interacting with animals (e.g, spending time with my dog or cat, training my horse, etc.)"
+    fator: null
+
+  - variavel: p_belonging
+    rotulo: "Belonging to a group"
+    texto: "Feeling connected to a group I'm part of (e.g., school alumni, people with the same cultural background, etc.)"
+    fator: interpersonal
+
+  - variavel: p_likable
+    rotulo: "Being liked"
+    texto: "Being liked by others (e.g, when I can tell someone likes me a lot, someone giving me a compliment, etc.)"
+    fator: reputational
+
+  - variavel: p_game
+    rotulo: "Playing games"
+    texto: "Playing one of my favorite games (e.g, a board game, a card game, a video game, a computer game, a physical game, etc.)"
+    fator: null
+
+  - variavel: p_community
+    rotulo: "Supporting community"
+    texto: "Taking actions to support my community (e.g., being involved in the city council, volunteering at the fire department, participating in neighborhood cleanups, conservation projects, etc.)"
+    fator: noble
+
+  - variavel: p_creative
+    rotulo: "Creativity"
+    texto: "Creativity (e.g, creative expression, creative writing, creating art, creating music, decorating, creating custom objects, etc.)"
+    fator: intellectual
+
+  - variavel: p_loving
+    rotulo: "Loving / being loved"
+    texto: "The feeling of loving or being loved (e.g, having a feeling of love for another person, knowing someone loves me, falling in love, 'new relationship energy', etc.)"
+    fator: interpersonal
+
+  - variavel: p_touch
+    rotulo: "Non-sexual touch"
+    texto: "Non-sexual touch or physical sensations (e.g, soft blankets, hot tubs, massage, sitting by a warm fire, platonic cuddling, hugs, etc.)"
+    fator: sensorial
+
+  - variavel: p_adrenaline
+    rotulo: "High-adrenaline activities"
+    texto: "High-adrenaline activities (e.g., roller coasters, sky diving, etc.)"
+    fator: thrilling
+
+  - variavel: p_learning
+    rotulo: "Learning"
+    texto: "Learning (e.g, reading educational information, practicing skills in order to improve, taking classes, informative non-fiction books, etc.)"
+    fator: intellectual
+
+  - variavel: p_sex
+    rotulo: "Sexual arousal"
+    texto: "Sexual arousal (e.g, sex, pornography, masturbation, sexy romance novels, thinking about sexual fantasies, etc.)"
+    fator: null
+
+  - variavel: p_helping
+    rotulo: "Helping others"
+    texto: "Helping other people (e.g., giving people advice, solving a problem for someone else, etc.)"
+    fator: noble
+
+  - variavel: p_nature
+    rotulo: "Being in nature"
+    texto: "Being in nature (e.g, walking in nature, observing wild animals, looking out at nature, watching the sunrise, etc.)"
+    fator: null
+
+  - variavel: p_partying
+    rotulo: "Partying / letting loose"
+    texto: "Letting loose or acting wild or partying (e.g, having unrestrained fun, acting uninhibited, going clubbing all night, etc.)"
+    fator: thrilling
+
+  - variavel: p_taste
+    rotulo: "Taste (food/beverages)"
+    texto: "Taste (e.g, food, beverages, etc.)"
+    fator: sensorial
+
+  - variavel: p_charity
+    rotulo: "Charity / altruism"
+    texto: "Charitable or altruistic activities (e.g, volunteering at a shelter for abused women, taking an action that I think helps improve the world, donating money to a good cause, helping save someone's life, standing up for what I believe, etc.)"
+    fator: noble
+
+  - variavel: p_power
+    rotulo: "Authority / power"
+    texto: "Being in a position of authority or power, or having others treat me with great respect (e.g, having others look up to me, having power to choose what others do, having other people defer to my opinion, etc.)"
+    fator: reputational
+
+  - variavel: p_attractive
+    rotulo: "Being attractive"
+    texto: "Being attractive (e.g, having others find me good-looking, wearing or buying clothes that make me look good, having others find me sexy, etc.)"
+    fator: reputational
+
+  - variavel: p_qualityTime
+    rotulo: "Quality time with loved ones"
+    texto: "Spending quality time with loved ones that makes us feel connected to each other (e.g., hanging out with my friends, watching my kids play, etc.)"
+    fator: interpersonal
+
+  - variavel: p_recognition
+    rotulo: "Social recognition"
+    texto: "Getting social recognition for my performance or accomplishments (e.g, people telling me I did a great job, getting a standing ovation after performing, winning an award, my work being featured in a magazine, being praised on TV, etc.)"
+    fator: reputational
+
+  - variavel: p_smell
+    rotulo: "Smell"
+    texto: "Smell (e.g, perfume, cologne, scented candles, the smell of my lover, the smell of food, etc.)"
+    fator: sensorial
+
+  - variavel: p_risk
+    rotulo: "Escaping risky situations"
+    texto: "Narrowly escaping a risky situation without having anything bad happen (e.g., surviving a bear encounter, doing something sneaky without being caught, running across a busy street with no crosswalk, etc.)"
+    fator: thrilling
+
+  - variavel: p_connection
+    rotulo: "Deep personal connection"
+    texto: "Feeling a deep connection with a person who I'm interacting with (e.g., having a deep conversation with a friend, discovering the many things I have in common with somebody I didn't know so well, etc.)"
+    fator: interpersonal
+
+  - variavel: p_spiritual
+    rotulo: "Spiritual / religious feelings"
+    texto: "Spiritual feelings, religious feelings, or feeling connection with the divine (e.g, prayer, religious rapture, spiritual rituals, etc.)"
+    fator: noble
+
+  - variavel: p_status
+    rotulo: "High status"
+    texto: "Having high status (e.g, having others think I'm cool, having others want to be like me, having others envy me, etc.)"
+    fator: reputational
+
+  - variavel: p_sound
+    rotulo: "Sound / music"
+    texto: "Sound (e.g, music or other beautiful sounds)"
+    fator: null
+
+  - variavel: p_humor
+    rotulo: "Laughing / humor"
+    texto: "Laughing or enjoying humor (e.g, watching comedy, hearing a great joke, laughing with friends, etc.)"
+    fator: null
+
+  - variavel: p_scary
+    rotulo: "Frightening but fun"
+    texto: "Doing things that are frightening but fun (e.g, watching scary movies, going to haunted houses or horror escape rooms, etc.)"
+    fator: thrilling
+
+  - variavel: p_spontaneous
+    rotulo: "Spontaneity"
+    texto: "Doing things with total spontaneity, even if it looks silly, childish or weird (e.g., changing plans last minute if I want to, singing aloud on the street, acting without worrying what others will think, etc.)"
+    fator: thrilling
+
+  - variavel: p_thinking
+    rotulo: "Exploring ideas / thinking"
+    texto: "Exploring ideas or thinking (e.g, pondering concepts, analyzing, discussing ideas, trying to figure things out, trying to understand complex things, etc.)"
+    fator: intellectual
+
+  - variavel: p_caring
+    rotulo: "Taking care of others"
+    texto: "Taking care of others (e.g, nurturing a child, taking care of my romantic partner, taking care of a pet, etc.)"
+    fator: noble
+
+  - variavel: p_supportFamily
+    rotulo: "Supporting family"
+    texto: "Taking actions to support my family (e.g., cooking nutritious food for my children, running errands for my parents, providing income for the household, etc.)"
+    fator: noble
+
+# --- Fatores ---
+# Cada fator é a média simples dos seus itens (escala -3 a +3).
+# Fórmula de conversão para 0-10: (score + 3) * (10/6)
+fatores:
+  interpersonal:
+    rotulo: "Interpessoal"
+    itens: [p_qualityTime, p_belonging, p_loving, p_connection]
+    formula: "média simples (soma / 4)"
+
+  thrilling:
+    rotulo: "Emocionante"
+    itens: [p_risk, p_partying, p_adrenaline, p_scary, p_spontaneous, p_exciting]
+    formula: "média simples (soma / 6)"
+
+  noble:
+    rotulo: "Nobre"
+    itens: [p_spiritual, p_supportFamily, p_charity, p_community, p_caring, p_helping]
+    formula: "média simples (soma / 6)"
+
+  reputational:
+    rotulo: "Reputacional"
+    itens: [p_recognition, p_status, p_attractive, p_power, p_likable, p_competition]
+    formula: "média simples (soma / 6)"
+
+  sensorial:
+    rotulo: "Sensorial"
+    itens: [p_touch, p_taste, p_smell, p_relax]
+    formula: "média simples (soma / 4)"
+
+  intellectual:
+    rotulo: "Intelectual"
+    itens: [p_thinking, p_creative, p_learning, p_imagination, p_seeingBeauty]
+    formula: "média simples (soma / 5)"
+
+# --- Itens avulsos (sem fator) ---
+# Estes 6 itens não pertencem a nenhum fator.
+# No relatório do assessment, são convertidos individualmente para escala 0-10.
+itens_sem_fator:
+  - p_humor
+  - p_nature
+  - p_sound
+  - p_animals
+  - p_game
+  - p_sex
+
+# --- Colunas PII (remover na Fase 1 ANTES de qualquer análise) --- removendo dados sensiveis
+colunas_pii:
+  - theirEmail
+  - userEmail
+  - theirEmailLower
+  - theirEmailCleaned
+  - contactInformation
+  - convenientTimes
+  nota: >
+    Lista não exaustiva. Na Fase 1, varrer o dataset inteiro em busca de
+    outras colunas que contenham emails, telefones ou informações de contato.
+
+# --- Padrões de colunas-lixo (remover na Fase 1) ---
+colunas_lixo:
+  padroes:
+    - "progressBar*"          # internals da barra de progresso
+    - "in_*"                  # variáveis temporárias de input do GuidedTrack
+    - "out_*"                 # variáveis temporárias de output do GuidedTrack
+    - "temp_*"                # variáveis temporárias
+    - "mailchimp*"            # internals do MailChimp
+    - "utm_*"                 # parâmetros de rastreamento UTM
+    - "selectedLabel*"        # variáveis de fluxo do ranking
+    - "selectedSource*"       # variáveis de fluxo do ranking
+    - "moreOften*"            # respostas dos exercícios de reflexão
+    - "moreOfIt*"             # respostas dos exercícios de reflexão
+    - "usePleasure*"          # respostas dos exercícios de reflexão
+    - "reportLink"            # URL gerada do relatório
+    - "sopToDisplay*"         # variáveis de fluxo de exibição
+    - "selectFive"            # flag de desempate
+    - "indItems*"             # dicionários de rótulos
+    - "questionRank*Label"    # labels do ranking
+    - "alreadySentReport"     # flag de controle de envio
+    - "isRunningMainProgram"  # flag de controle
+    - "mailchimpInterest"     # ID interno MailChimp
+    - "invalidEmail"          # flag de validação
+  colunas_derivadas_corrompidas:
+    - "sop_*"                 # scores de fator (corrompidos por locale)
+    - "*Mean0to10"            # médias convertidas (corrompidas)
+    - "*Percentile"           # percentis (corrompidos)
+    - "*StdDev"               # desvios padrão (corrompidos)
+    - "factor*"               # fatores (corrompidos)
+    - "zscore*"               # z-scores (corrompidos)
+    - "*0to10"                # conversões 0-10 (corrompidas)
+  nota: >
+    Todas as colunas derivadas/calculadas estão corrompidas pela conversão
+    de locale (vírgula decimal, notação científica quebrada). Devem ser
+    descartadas e recalculadas a partir dos 37 itens brutos (p_*).
+
+# --- Notas de formato do CSV ---
+formato_csv:
+  separador: ";"
+  encoding: "verificar na Fase 1 (provavelmente UTF-8 ou latin-1)"
+  decimal: "corrompido — mix de vírgula decimal e ponto, notação científica quebrada"
+  linhas_aproximadas: 11718
+  colunas_aproximadas: 202
+  nota: >
+    Muitas linhas são execuções incompletas (usuários que abandonaram).
+    Critérios de completude serão definidos junto com o usuário na Fase 1.
