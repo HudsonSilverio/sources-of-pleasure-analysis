@@ -57,21 +57,35 @@ anotações de disponibilidade de horário.
 5. **Idiomas.** A conversa e todos os entregáveis (relatórios, banco de insights,
    comentários em código) são em **português (pt-BR)**. Nomes de variáveis,
    funções e docstrings em código permanecem em inglês por convenção técnica.
-6. **Pergunta antes da técnica.** Nunca aplique uma técnica estatística sem uma
+6. **Linguagem acessível, sempre.** O usuário não é estatístico. Escreva tudo
+   — relatórios, hipóteses, explicações, resumos — como se fosse para um post
+   de blog ou uma conversa informal. **Proibido** usar jargão técnico sem
+   traduzir na mesma frase. Exemplos de substituições obrigatórias:
+   - "tautológico" → "óbvio / resposta já conhecida antes de testar"
+   - "ortogonal" → "independente / sem relação"
+   - "prossocial" → "voltado para cuidar de pessoas e causas"
+   - "bimodal" → "dividido em dois grupos opostos"
+   - "intuição ingênua" → "o que a maioria das pessoas acharia"
+   - "parcimonioso" → "enxuto / com menos perguntas"
+   - "robusto" → "confiável / que se mantém"
+   Termos técnicos de métodos (EFA, PCA, Lasso, bootstrap, silhouette, etc.)
+   podem aparecer, mas sempre acompanhados de uma explicação curta em
+   linguagem comum na primeira vez que forem usados.
+7. **Pergunta antes da técnica.** Nunca aplique uma técnica estatística sem uma
    pergunta/hipótese nomeada que a motive (exceto Fases 0–3, que são exploratórias
    por natureza). Toda análise das Fases 5–6 deve referenciar um ID de hipótese
    (H01, H02, ...).
-7. **Critique a metodologia quando necessário.** Se um passo solicitado for
+8. **Critique a metodologia quando necessário.** Se um passo solicitado for
    estatisticamente inadequado para este dataset, diga isso e proponha alternativa.
    Não obedeça em silêncio, nem desvie em silêncio — discuta antes.
-8. **Reprodutibilidade.** Toda figura e todo número em um relatório deve ser
+9. **Reprodutibilidade.** Toda figura e todo número em um relatório deve ser
    regenerável rodando o script correspondente em `scripts/`. Fixe seeds
    aleatórias. Faça commit no git ao fim de cada fase aprovada.
-9. **Artefatos reutilizáveis.** Toda fase que calcula dados intermediários
-   (estatísticas, matrizes, flags, scores) deve salvá-los como CSVs em
-   `data/processed/` com prefixo `phaseN_`. Isso permite que fases seguintes
-   consumam resultados sem recalcular. Listar os artefatos no relatório da fase.
-10. **Gráficos organizados por fase.** Gráficos exploratórios ficam em
+10. **Artefatos reutilizáveis.** Toda fase que calcula dados intermediários
+    (estatísticas, matrizes, flags, scores) deve salvá-los como CSVs em
+    `data/processed/` com prefixo `phaseN_`. Isso permite que fases seguintes
+    consumam resultados sem recalcular. Listar os artefatos no relatório da fase.
+11. **Gráficos organizados por fase.** Gráficos exploratórios ficam em
     `outputs/figures/exploratory/<phaseN>/`. Cada fase tem sua subpasta.
 
 ## FATOS SOBRE OS DADOS — verificados antes do início
