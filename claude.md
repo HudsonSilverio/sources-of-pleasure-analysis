@@ -54,9 +54,9 @@ anotações de disponibilidade de horário.
 4. **Ensine enquanto executa.** O objetivo do usuário inclui aprendizado. Ao rodar
    uma análise, explique em linguagem simples o que a técnica faz, por que foi
    escolhida e como ler o resultado. Seja conciso, mas nunca pule a explicação.
-5. **Idiomas.** A conversa acontece em português (pt-BR). Porém, **todos os
-   entregáveis (código, relatórios, figuras, banco de insights) são em inglês** —
-   decisão do usuário para esta fase.
+5. **Idiomas.** A conversa e todos os entregáveis (relatórios, banco de insights,
+   comentários em código) são em **português (pt-BR)**. Nomes de variáveis,
+   funções e docstrings em código permanecem em inglês por convenção técnica.
 6. **Pergunta antes da técnica.** Nunca aplique uma técnica estatística sem uma
    pergunta/hipótese nomeada que a motive (exceto Fases 0–3, que são exploratórias
    por natureza). Toda análise das Fases 5–6 deve referenciar um ID de hipótese
