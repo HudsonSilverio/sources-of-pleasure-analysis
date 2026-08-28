@@ -1,0 +1,178 @@
+# ==============================================================================
+# hypotheses.yaml — Roteamento de hipoteses para os analistas
+# Cada hipotese tem: id, analista responsavel, titulo, tipo de teste e parametros.
+# O coordenador (phase5_analysts.py) le este arquivo e distribui as hipoteses.
+# Para reutilizar com outra ferramenta: crie outro hypotheses.yaml.
+# ==============================================================================
+
+hypotheses:
+
+  # --- Analista Distribucional (H01-H04) ---
+
+  H01:
+    analyst: distributional
+    title: "Rir e a fonte de prazer mais universal?"
+    headline: "Rir: o unico prazer com que quase todo mundo concorda"
+    test: ranking_bootstrap
+    params:
+      metric: net_agreement
+      top_n: 5
+      n_bootstrap: 1000
+
+  H02:
+    analyst: distributional
+    title: "Conexao, amor e aprendizado dominam o ranking?"
+    headline: "Conexao humana e aprendizado: o que as pessoas mais valorizam"
+    test: ranking_bootstrap
+    params:
+      metric: top2_pct
+      top_n: 5
+      n_bootstrap: 1000
+
+  H03:
+    analyst: distributional
+    title: "Buscar emocao forte e a categoria mais rejeitada?"
+    headline: "A maioria nao quer adrenalina — emocao forte e o prazer menos popular"
+    test: factor_comparison
+    params:
+      target_factor: thrilling
+      metric: median
+
+  H04:
+    analyst: distributional
+    title: "Espiritualidade divide as pessoas em dois grupos?"
+    headline: "Espiritualidade: o prazer que racha a sala ao meio"
+    test: bimodality_gmm
+    params:
+      item: p_spiritual
+      n_components: [1, 2]
+
+  # --- Analista Relacional (H05-H09) ---
+
+  H05:
+    analyst: relational
+    title: "Alguns prazeres sao realmente incompativeis?"
+    headline: "Quem ama natureza nao liga pra status — alguns prazeres sao incompativeis"
+    test: negative_correlations
+    params:
+      correction: fdr_bh
+      alpha: 0.05
+
+  H06:
+    analyst: relational
+    title: "Mentes curiosas sao indiferentes a status?"
+    headline: "Mentes curiosas nao buscam status — as duas dimensoes sao independentes"
+    test: equivalence_tost
+    params:
+      factor1: intellectual
+      factor2: reputational
+      equivalence_bound: 0.1
+
+  H07:
+    analyst: relational
+    title: "Existe um superfator 'quem cuida'?"
+    headline: "Quem cuida de pessoas tambem cuida de causas"
+    test: second_order_factor
+    params:
+      factors: [interpersonal, noble]
+
+  H08:
+    analyst: relational
+    title: "Prazer sexual: emocao ou sensacao?"
+    headline: "Prazer sexual: mais emocao e ego do que pura sensacao?"
+    test: steiger_comparison
+    params:
+      item: p_sex
+      factor_high: thrilling
+      factor_low: sensorial
+
+  H09:
+    analyst: relational
+    title: "Amor prediz conexao e tempo de qualidade?"
+    headline: "Amor gera conexao: quem ama tambem valoriza tempo de qualidade"
+    test: predictive_correlation
+    params:
+      predictors: [p_beingInLove, p_qualityTime]
+      target: p_connection
+      test_size: 0.3
+
+  # --- Analista Estrutural (H10) ---
+
+  H10:
+    analyst: structural
+    title: "Os 6 itens avulsos se conectam entre si?"
+    headline: "Humor e musica, natureza e animais: pares naturais entre os itens avulsos"
+    test: standalone_correlations
+    params:
+      threshold_notable: 0.30
+      threshold_new_group: 0.50
+
+  # --- Analista Segmentacao (H11-H15) ---
+
+  H11:
+    analyst: segmentation
+    title: "Somos especialistas ou generalistas do prazer?"
+    headline: "Especialistas vs. generalistas: como as pessoas organizam seu prazer"
+    test: entropy_groups
+    params:
+      split: median
+
+  H12:
+    analyst: segmentation
+    title: "Perfis de prazer sao um espectro ou existem tipos reais?"
+    headline: "Nao existem tipos claros — prazer e um espectro"
+    test: clustering_validation
+    params:
+      methods: [kmeans, hierarchical, gmm]
+      k_range: [2, 8]
+      n_bootstrap: 100
+      threshold_silhouette: 0.25
+
+  H13:
+    analyst: segmentation
+    title: "Quem busca emocao forte tem perfil completamente diferente?"
+    headline: "Quem busca adrenalina: um perfil de prazer completamente diferente"
+    test: quartile_comparison
+    params:
+      factor: thrilling
+      quartiles: [Q1, Q4]
+
+  H14:
+    analyst: segmentation
+    title: "Quem gosta de espiritualidade e uma tribo a parte?"
+    headline: "A minoria espiritual: um perfil de prazer distinto"
+    test: group_comparison
+    params:
+      item: p_spiritual
+      cut_high: 1
+      cut_low: -1
+
+  H15:
+    analyst: segmentation
+    title: "Existe um grupo puramente intelectual?"
+    headline: "A vida da mente: existem pessoas que so sentem prazer em pensar?"
+    test: profile_search
+    params:
+      dominant_factor: intellectual
+      k_range: [3, 6]
+
+  # --- Analista Preditivo (H16-H17) ---
+
+  H16:
+    analyst: predictive
+    title: "Adrenalina e serenidade sao caminhos opostos?"
+    headline: "Adrenalina vs. serenidade: dois caminhos opostos para o prazer"
+    test: regression_train_test
+    params:
+      predictors: [p_adrenaline, p_scary, p_risk]
+      target: p_relax
+      test_size: 0.3
+
+  H17:
+    analyst: predictive
+    title: "Qual fator mais contribui pro prazer geral?"
+    headline: "O maior motor do prazer geral pode te surpreender"
+    test: multiple_regression
+    params:
+      predictors: all_factors
+      target: mean_overall
