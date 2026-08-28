@@ -85,7 +85,16 @@ anotações de disponibilidade de horário.
     (estatísticas, matrizes, flags, scores) deve salvá-los como CSVs em
     `data/processed/` com prefixo `phaseN_`. Isso permite que fases seguintes
     consumam resultados sem recalcular. Listar os artefatos no relatório da fase.
-11. **Gráficos organizados por fase.** Gráficos exploratórios ficam em
+11. **Completude de artefatos.** Antes de fechar uma fase, pergunte: "os scripts
+    e analistas das próximas fases conseguem trabalhar só com o que foi gerado até
+    aqui?". Se não, a fase ainda não está pronta. Fases posteriores **devem** ler
+    e reutilizar os artefatos das fases anteriores — nunca recalcular o que já foi
+    calculado.
+12. **Respeitar os fatores do instrumento.** Não tente corrigir ou substituir os
+    6 fatores definidos pelo instrumento. Aceite-os e trabalhe com eles. Só crie
+    um novo fator se houver correlações surpreendentemente fortes entre itens
+    avulsos (os 6 que não pertencem a nenhum fator).
+13. **Gráficos organizados por fase.** Gráficos exploratórios ficam em
     `outputs/figures/exploratory/<phaseN>/`. Cada fase tem sua subpasta.
 
 ## FATOS SOBRE OS DADOS — verificados antes do início

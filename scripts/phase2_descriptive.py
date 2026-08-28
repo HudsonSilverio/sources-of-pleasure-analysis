@@ -219,6 +219,82 @@ print(f"  {items_csv}")
 print(f"  {factors_csv}")
 
 # ---------------------------------------------------------------------------
+# Per-respondent profiles
+# ---------------------------------------------------------------------------
+print("\nCalculando perfis por respondente...")
+
+respondent_profiles = pd.DataFrame(index=df.index)
+
+# --- Overall pleasure ---
+respondent_profiles["mean_overall"] = df[ITEM_COLS].mean(axis=1)
+respondent_profiles["std_overall"] = df[ITEM_COLS].std(axis=1)
+respondent_profiles["n_positive"] = (df[ITEM_COLS] > 0).sum(axis=1)
+respondent_profiles["n_negative"] = (df[ITEM_COLS] < 0).sum(axis=1)
+respondent_profiles["n_neutral"] = (df[ITEM_COLS] == 0).sum(axis=1)
+respondent_profiles["range_items"] = df[ITEM_COLS].max(axis=1) - df[ITEM_COLS].min(axis=1)
+
+# --- Factor scores (copy from clean.csv for convenience) ---
+for col in FACTOR_COLS:
+    respondent_profiles[col] = df[col]
+
+# --- Which factor dominates for this person ---
+factor_only = df[FACTOR_COLS]
+respondent_profiles["max_factor"] = factor_only.idxmax(axis=1).str.replace("factor_", "")
+respondent_profiles["min_factor"] = factor_only.idxmin(axis=1).str.replace("factor_", "")
+respondent_profiles["max_factor_score"] = factor_only.max(axis=1)
+respondent_profiles["min_factor_score"] = factor_only.min(axis=1)
+
+# --- Quartiles per factor ---
+for col in FACTOR_COLS:
+    fname = col.replace("factor_", "")
+    respondent_profiles[f"quartile_{fname}"] = pd.qcut(
+        df[col], q=4, labels=["Q1", "Q2", "Q3", "Q4"]
+    )
+
+# --- Entropy of factor profile (diversity index) ---
+# Shift factor scores to positive (0-6 range), normalize to proportions,
+# compute Shannon entropy. High entropy = generalist, low = specialist.
+factor_shifted = factor_only + 3  # map from [-3,+3] to [0,6]
+factor_shifted = factor_shifted.clip(lower=0.001)  # avoid log(0)
+factor_proportions = factor_shifted.div(factor_shifted.sum(axis=1), axis=0)
+respondent_profiles["entropy_factors"] = -(
+    factor_proportions * np.log2(factor_proportions)
+).sum(axis=1)
+max_entropy_6 = np.log2(6)
+respondent_profiles["entropy_normalized"] = (
+    respondent_profiles["entropy_factors"] / max_entropy_6
+)
+respondent_profiles["group_entropy"] = np.where(
+    respondent_profiles["entropy_normalized"] >= respondent_profiles["entropy_normalized"].median(),
+    "generalista", "especialista"
+)
+
+# --- Spiritual group ---
+respondent_profiles["group_spiritual"] = pd.cut(
+    df["p_spiritual"],
+    bins=[-4, -1, 1, 4],
+    labels=["baixo", "neutro", "alto"],
+    include_lowest=True,
+)
+
+# --- Save ---
+profiles_csv = STATS_DIR / "phase2_respondent_profiles.csv"
+respondent_profiles.to_csv(profiles_csv, index_label="respondent_idx")
+print(f"  {profiles_csv}")
+
+# --- Print summary ---
+print(f"\n  Perfis calculados para {len(respondent_profiles)} respondentes")
+print(f"  Colunas: {len(respondent_profiles.columns)}")
+print(f"  Media geral de prazer: {respondent_profiles['mean_overall'].mean():.2f} "
+      f"(DP = {respondent_profiles['mean_overall'].std():.2f})")
+print(f"  Entropia media: {respondent_profiles['entropy_normalized'].mean():.3f}")
+print(f"  Generalistas: {(respondent_profiles['group_entropy'] == 'generalista').sum()}")
+print(f"  Especialistas: {(respondent_profiles['group_entropy'] == 'especialista').sum()}")
+print(f"  Espiritual alto: {(respondent_profiles['group_spiritual'] == 'alto').sum()}")
+print(f"  Espiritual baixo: {(respondent_profiles['group_spiritual'] == 'baixo').sum()}")
+print(f"  Espiritual neutro: {(respondent_profiles['group_spiritual'] == 'neutro').sum()}")
+
+# ---------------------------------------------------------------------------
 # CHARTS
 # ---------------------------------------------------------------------------
 import matplotlib

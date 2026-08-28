@@ -1,6 +1,6 @@
 # Fase 4 — Hipoteses (Revisadas)
 
-**Total:** 19 hipoteses (refinadas a partir de 41 originais)
+**Total:** 18 hipoteses (refinadas a partir de 41 originais)
 
 **Todas viaveis** com os dados que temos. Nenhuma precisa de dados externos.
 
@@ -17,10 +17,10 @@ espiritualidade, humor).
 |------|-----------|-----------|-----|
 | O que mais (e menos) nos da prazer | Rankings, consenso, divisoes | H01-H04 | 4 |
 | Como os prazeres se relacionam | Conexoes, independencia, oposicoes | H05-H09 | 5 |
-| O instrumento mede prazer direito? | Estrutura dos fatores, dimensoes escondidas | H10-H11 | 2 |
-| Existem "tipos" de pessoas? | Perfis, grupos, subgrupos | H12-H16 | 5 |
-| O que prediz o que? | Cadeias de associacao, caminhos opostos | H17-H19 | 3 |
-| **Total** | | | **19** |
+| Os itens avulsos formam um grupo? | Itens sem fator podem se conectar | H10 | 1 |
+| Existem "tipos" de pessoas? | Perfis, grupos, subgrupos | H11-H15 | 5 |
+| O que prediz o que? | Cadeias de associacao, caminhos opostos | H16-H18 | 3 |
+| **Total** | | | **18** |
 
 ## Resumo por analista
 
@@ -28,9 +28,9 @@ espiritualidade, humor).
 |----------|-----------|-----|
 | distribucional | H01, H02, H03, H04 | 4 |
 | relacional | H05, H06, H07, H08, H09 | 5 |
-| estrutural | H10, H11 | 2 |
-| segmentacao | H12, H13, H14, H15, H16 | 5 |
-| preditivo + comparativo | H17, H18, H19 | 3 |
+| estrutural | H10 | 1 |
+| segmentacao | H11, H12, H13, H14, H15 | 5 |
+| preditivo + comparativo | H16, H17, H18 | 3 |
 
 ---
 
@@ -206,53 +206,40 @@ alguem pontua em "amar", consigo adivinhar quanto vai pontuar em
 
 ---
 
-## Tema 3 — O instrumento mede prazer direito?
+## Tema 3 — Os itens avulsos formam um grupo?
 
-### H10 — Os dados sugerem 8 dimensoes em vez de 6?
-
-A analise da Fase 3 sugeriu que os dados se organizam em 8 grupos
-naturais, nao 6. Uma analise fatorial exploratoria (EFA — tecnica que
-descobre agrupamentos nos dados) com todos os 37 itens pode revelar uma
-estrutura melhor que os 6 fatores escolhidos pelos autores do instrumento.
-
-- **Manchete:** "O mapa do prazer tem 8 continentes, nao 6"
-- **Teste:** Rodar EFA (tecnica que descobre quantos agrupamentos
-  naturais existem nos dados) para 6, 7 e 8 grupos. Comparar qual
-  solucao explica mais, se ajusta melhor e faz mais sentido.
-- **Origem:** Observacao O-04
-- **Literatura:** Joshanloo (2016, 201 citacoes) mostrou que metodos
-  mais flexiveis de analise fatorial encontram dimensoes mais separadas
-  do que metodos rigidos — sugerindo que estruturas de 6 fatores podem
-  estar escondendo separacoes reais. Bjorndal et al. (2023) encontraram
-  6 fatores de bem-estar que se agrupam sob um unico "fator geral de
-  felicidade".
-- **Analista:** estrutural
-
-### H11 — Os itens "sem casa" formam um fator escondido?
+### H10 — Os 6 itens "sem casa" se conectam entre si?
 
 Humor, som/musica, natureza, animais, jogos e sexo nao pertencem a nenhum
 dos 6 fatores do instrumento. Mas humor e musica correlacionam em 0,36,
-e natureza e animais em 0,25. Sera que alguns desses itens orfaos formam
-um ou mais grupos novos quando analisados juntos?
+e natureza e animais em 0,25. Sera que alguns desses itens avulsos formam
+duplas ou trios com conexoes fortes, ou cada um e realmente independente?
 
-- **Manchete:** "Uma dimensao escondida: humor, musica, natureza e
-  animais podem pertencer juntos"
-- **Teste:** Comparar a EFA com 31 itens (so os que ja tem fator) vs
-  todos os 37 itens. Os orfaos formam um grupo coerente? Examinar os
-  pesos de cada item nos fatores e interpretar.
+**Nota importante:** esta hipotese NAO tenta corrigir os 6 fatores do
+instrumento. Aceitamos os fatores como sao. O objetivo e apenas explorar
+se os itens avulsos tem conexoes interessantes entre si que valham
+comentar.
+
+- **Manchete:** "Humor e musica, natureza e animais: pares naturais entre
+  os itens avulsos"
+- **Teste:** Examinar a matriz de correlacao entre os 6 itens avulsos.
+  Verificar se algum par ou trio tem correlacao forte (rho > 0,30).
+  Se sim, descrever o padrao. Se nao, confirmar que sao independentes.
+  So considerar criar um "novo grupo" se as correlacoes forem
+  surpreendentemente altas (rho > 0,50).
 - **Origem:** Observacao O-14
 - **Literatura:** Gallagher et al. (2009, 556 citacoes) mostraram que
-  modelos de bem-estar podem ser organizados em estruturas hierarquicas
-  (grupos dentro de grupos). Encontrar um novo fator entre os itens
-  orfaos seria como descobrir uma nova dimensao do prazer que o
-  instrumento original nao reconheceu.
+  modelos de bem-estar podem ser organizados em estruturas com varios
+  niveis (grupos dentro de grupos). Mesmo sem criar um novo fator,
+  encontrar pares fortes entre os itens avulsos e uma descoberta
+  interessante.
 - **Analista:** estrutural
 
 ---
 
 ## Tema 4 — Existem "tipos" de pessoas?
 
-### H12 — Somos especialistas ou generalistas do prazer?
+### H11 — Somos especialistas ou generalistas do prazer?
 
 A maioria das pessoas concentra seu prazer em 2-3 fatores dominantes
 (especialistas) ou distribui de forma equilibrada entre todos os 6
@@ -274,7 +261,7 @@ que quem foca em poucos?
   com significado vive melhor.
 - **Analista:** segmentacao
 
-### H13 — Perfis de prazer sao um espectro, ou existem "tipos" reais?
+### H12 — Perfis de prazer sao um espectro, ou existem "tipos" reais?
 
 A melhor tentativa de agrupar os respondentes (k=2) deu um indice de
 separacao (silhouette) de apenas 0,114 — muito fraco. Isso significa que
@@ -293,7 +280,7 @@ um espectro continuo?
   — combina com nosso silhouette baixo.
 - **Analista:** segmentacao
 
-### H14 — Quem busca emocao forte tem um perfil de prazer completamente diferente?
+### H13 — Quem busca emocao forte tem um perfil de prazer completamente diferente?
 
 Respondentes no quartil superior (top 25%) do fator Emocionante podem
 diferir dos do quartil inferior nao so em emocao forte, mas em *todos*
@@ -312,7 +299,7 @@ os outros tipos de prazer.
   muda o perfil de prazer inteiro da pessoa.
 - **Analista:** segmentacao + comparativo
 
-### H15 — Quem gosta de espiritualidade e uma tribo a parte?
+### H14 — Quem gosta de espiritualidade e uma tribo a parte?
 
 Como a espiritualidade divide as pessoas em dois campos, quem pontua
 alto (>= +1) pode ter um perfil de prazer bem diferente — talvez mais
@@ -331,7 +318,7 @@ para emocao forte e status.
   para relacionamentos e causas.
 - **Analista:** segmentacao + comparativo
 
-### H16 — Existe um grupo "puramente intelectual"?
+### H15 — Existe um grupo "puramente intelectual"?
 
 Entre todos os perfis possiveis, da pra identificar um grupo de pessoas
 que pontua alto em prazeres intelectuais (aprender, pensar, criar) mas
@@ -353,7 +340,7 @@ baixo em quase todo o resto?
 
 ## Tema 5 — O que prediz o que?
 
-### H17 — Adrenalina e serenidade sao caminhos opostos?
+### H16 — Adrenalina e serenidade sao caminhos opostos?
 
 Situacoes emocionantes e relaxamento tem correlacao negativa (rho = -0,08).
 Gostar de atividades de alto risco (adrenalina, coisas assustadoras)
@@ -373,7 +360,7 @@ realmente prediz *nao gostar* de relaxamento e natureza?
   itens sensoriais.
 - **Analista:** preditivo
 
-### H18 — Qual fator mais contribui para o prazer geral?
+### H17 — Qual fator mais contribui para o prazer geral?
 
 Se usarmos os 6 fatores para prever o prazer medio geral (media dos 37
 itens), qual fator pesa mais? Sera o Interpessoal (que tem a maior media)
@@ -387,7 +374,7 @@ ou algum outro menos obvio?
 - **Origem:** Experiencia em ciencia de dados
 - **Analista:** preditivo
 
-### H19 — Menos de 10 perguntas conseguem capturar seu perfil completo?
+### H18 — Menos de 10 perguntas conseguem capturar seu perfil completo?
 
 37 itens e muito. Uma versao curta com menos de 10 perguntas bem
 escolhidas conseguiria prever o perfil completo de 6 fatores com boa
@@ -407,6 +394,12 @@ precisao?
 
 As 41 hipoteses originais foram reduzidas para 19. Abaixo esta o registro
 do que foi removido e por que.
+
+### Eliminadas por tentar corrigir o instrumento (1)
+
+| ID antigo | Titulo | Motivo |
+|-----------|--------|--------|
+| H10 (rev.) | 8 dimensoes vs 6 | O objetivo nao e corrigir o instrumento — aceitamos os 6 fatores como sao. Tentar propor 8 fatores seria criticar a ferramenta, nao analisar os dados. |
 
 ### Eliminadas por serem obvias (7)
 
@@ -445,10 +438,10 @@ do que foi removido e por que.
 
 | IDs antigos | Virou | Por que |
 |-------------|-------|--------|
-| H06 + H25 + H40 | H12 (especialistas vs generalistas) | Faziam a mesma pergunta de angulos diferentes |
-| H17 + H20 + H23 | H10 (8 dimensoes vs 6) | Todas sobre a estrutura dos 37 itens |
-| H27 + H37 | H14 (perfil de quem busca emocao) | Ambas comparavam quartis de Emocionante |
-| H12-antigo + H21 | H11 (fator escondido) | Ambas sobre itens orfaos formando novos grupos |
+| H06 + H25 + H40 | H11 (especialistas vs generalistas) | Faziam a mesma pergunta de angulos diferentes |
+| H17 + H20 + H23 | ~~H10~~ (eliminada na fase 4c) | Todas sobre a estrutura dos 37 itens — eliminada por tentar corrigir o instrumento |
+| H27 + H37 | H13 (perfil de quem busca emocao) | Ambas comparavam quartis de Emocionante |
+| H12-antigo + H21 | H10 (itens avulsos se conectam?) | Ambas sobre itens avulsos formando conexoes |
 
 ---
 
@@ -513,18 +506,20 @@ diversidade).
 | H07 | H14 | Superfator "quem cuida" |
 | H08 | H16 | Sexo: mais emocao que sensacao |
 | H09 | H34 | Amor prediz conexao |
-| H10 | H17 + H20 + H23 | 8 dimensoes vs 6 |
-| H11 | H21 + H12-antigo | Fator escondido (itens orfaos) |
-| H12 | H06-antigo + H25 + H40 | Especialistas vs generalistas |
-| H13 | H24 + H30 | Perfis sao um espectro |
-| H14 | H27 + H37 | Perfil de quem busca emocao |
-| H15 | H28 | Grupo espiritual |
-| H16 | H26 | Perfil puramente intelectual |
-| H17 | H36 | Adrenalina vs serenidade |
-| H18 | H31 + H32 | Maior motor do prazer geral |
-| H19 | H33 + H35 | Versao curta do instrumento |
+| ~~H10~~ | ~~H17 + H20 + H23~~ | ~~8 dimensoes vs 6~~ (eliminada — nao corrigir instrumento) |
+| H10 | H21 + H12-antigo | Itens avulsos se conectam? |
+| H11 | H06-antigo + H25 + H40 | Especialistas vs generalistas |
+| H12 | H24 + H30 | Perfis sao um espectro |
+| H13 | H27 + H37 | Perfil de quem busca emocao |
+| H14 | H28 | Grupo espiritual |
+| H15 | H26 | Perfil puramente intelectual |
+| H16 | H36 | Adrenalina vs serenidade |
+| H17 | H31 + H32 | Maior motor do prazer geral |
+| H18 | H33 + H35 | Versao curta do instrumento |
 
 ---
 
-*Revisado de 41 para 19 hipoteses apos revisao de literatura e refinamento.*
+*Revisado de 41 para 18 hipoteses apos revisao de literatura e refinamento.*
 *Fase 4b — revisao informada por artigos academicos.*
+*Fase 4c — H10-antigo (8 dimensoes vs 6) eliminada por tentar corrigir o instrumento;
+H11-antigo reformulada como H10 (explorar itens avulsos de forma conservadora).*

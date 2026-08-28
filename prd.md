@@ -64,6 +64,16 @@ da fase N.
 diretamente sem recalcular. O relatório da fase deve listar os artefatos gerados
 em uma seção "Artefatos reutilizáveis".
 
+**Regra de completude de artefatos (lição aprendida na Fase 4b):** cada fase deve
+produzir **todos** os dados intermediários que as fases seguintes vão precisar.
+Antes de marcar uma fase como pronta, pergunte: "os analistas/scripts das próximas
+fases conseguem trabalhar só com o que foi gerado até aqui, sem precisar recalcular
+nada?". Se a resposta for não, a fase ainda não está completa. Fases posteriores
+**devem** ler e reutilizar os artefatos das fases anteriores — nunca recalcular o
+que já foi calculado. Exemplo: a Fase 2 não gera apenas estatísticas por item, mas
+também perfis por respondente (médias, scores de fator, grupos derivados), porque
+as Fases 5–6 precisam desses dados prontos.
+
 **Convenção de gráficos:** gráficos exploratórios ficam em
 `outputs/figures/exploratory/<phaseN>/`. Cada fase tem sua própria subpasta.
 
@@ -336,6 +346,7 @@ Regras:
 ## 7. Nota de idioma
 
 A conversa entre usuário e Claude Code acontece em português (pt-BR). Este PRD e o
-CLAUDE.md estão em português. Porém, **todos os entregáveis do projeto — código,
-comentários, relatórios, figuras e o banco de insights — são escritos em inglês**,
-por decisão do usuário para a fase alfa.
+CLAUDE.md estão em português. **Todos os entregáveis do projeto — relatórios,
+figuras, banco de insights e comentários em código — também são em português
+(pt-BR)**, por decisão do usuário. Nomes de variáveis, funções e docstrings em
+código permanecem em inglês por convenção técnica.
