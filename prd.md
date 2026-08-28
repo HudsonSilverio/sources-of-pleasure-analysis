@@ -79,6 +79,65 @@ as Fases 5–6 precisam desses dados prontos.
 
 ---
 
+### Checklist de artefatos obrigatórios (Fases 0–4)
+
+Cada fase deve produzir **todos** os artefatos listados abaixo antes de ser
+considerada pronta. Os nomes são genéricos — funcionam para qualquer instrumento.
+O checklist das Fases 5–9 será adicionado conforme forem construídas.
+
+#### Fase 0
+
+| Artefato | Descrição |
+|----------|-----------|
+| `config/instrument.yaml` | Mapa completo: itens, fatores, escala, colunas de PII, colunas-lixo |
+| `outputs/reports/phase0_instrument.md` | O que a ferramenta mede, quem responde, ambiguidades encontradas |
+
+**Pergunta de saída:** "Alguém que nunca viu essa ferramenta consegue entender o que cada coluna significa só lendo o yaml?"
+
+#### Fase 1
+
+| Artefato | Descrição |
+|----------|-----------|
+| `data/processed/clean.csv` | Dataset limpo, sem PII, sem lixo, com scores de fator recalculados a partir dos itens brutos |
+| `outputs/reports/phase1_cleaning.md` | Quantas linhas entraram, quantas saíram, o que foi removido e por quê |
+
+**Pergunta de saída:** "O dataset limpo tem tudo que a Fase 2 precisa para calcular estatísticas — por item, por fator e por pessoa?"
+
+#### Fase 2
+
+| Artefato | Descrição |
+|----------|-----------|
+| `data/processed/phase2_item_stats.csv` | Estatísticas de cada item/pergunta (média, mediana, desvio, assimetria, frequências, teto, piso, entropia...) |
+| `data/processed/phase2_factor_stats.csv` | Mesmas estatísticas, mas para cada fator/dimensão |
+| `data/processed/phase2_respondent_profiles.csv` | Um perfil de cada pessoa: média geral, fator dominante, diversidade do perfil (entropia), grupos derivados (especialista/generalista, alto/baixo em dimensões-chave) |
+| `outputs/reports/phase2_descriptive.md` | Rankings, itens que mais dividem, efeitos de teto/piso, candidatos a distribuição dividida em dois grupos |
+| `outputs/figures/exploratory/phase2/` | Gráficos de distribuição, rankings, heatmaps de frequência |
+
+**Pergunta de saída:** "Os analistas das Fases 5–6 conseguem pegar os perfis por pessoa e os grupos derivados e já trabalhar, sem precisar recalcular nada?"
+
+#### Fase 3
+
+| Artefato | Descrição |
+|----------|-----------|
+| `data/processed/phase3_corr_items.csv` | Matriz de correlação entre todos os itens |
+| `data/processed/phase3_corr_factors.csv` | Matriz de correlação entre todos os fatores |
+| `data/processed/phase3_pca_loadings.csv` | Pesos de cada item nos componentes principais |
+| `data/processed/phase3_anomaly_flags.csv` | Flags por pessoa: respostas suspeitas (padrão reto, valores extremos) |
+| `outputs/reports/phase3_eda.md` | Lista de observações (pistas) — cada uma com uma possível pergunta |
+| `outputs/figures/exploratory/phase3/` | Heatmaps, redes de correlação, dendrogramas, projeções de respondentes |
+
+**Pergunta de saída:** "A lista de observações é rica o suficiente para gerar hipóteses boas na Fase 4?"
+
+#### Fase 4
+
+| Artefato | Descrição |
+|----------|-----------|
+| `outputs/reports/phase4_hypotheses.md` | Registro completo: ID, pergunta, manchete, teste proposto, analista responsável, origem, literatura |
+
+**Pergunta de saída:** "Cada hipótese tem um teste claro e um analista atribuído? Todas funcionam com os dados que temos?"
+
+---
+
 ### Fase 0 — Entendimento da ferramenta
 **Objetivo:** saber exatamente o que cada variável relevante significa antes de
 tocar nos dados.
