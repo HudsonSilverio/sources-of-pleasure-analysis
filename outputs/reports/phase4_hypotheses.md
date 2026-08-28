@@ -1,6 +1,6 @@
 # Fase 4 — Hipoteses (Revisadas)
 
-**Total:** 18 hipoteses (refinadas a partir de 41 originais)
+**Total:** 17 hipoteses (refinadas a partir de 41 originais)
 
 **Todas viaveis** com os dados que temos. Nenhuma precisa de dados externos.
 
@@ -19,8 +19,8 @@ espiritualidade, humor).
 | Como os prazeres se relacionam | Conexoes, independencia, oposicoes | H05-H09 | 5 |
 | Os itens avulsos formam um grupo? | Itens sem fator podem se conectar | H10 | 1 |
 | Existem "tipos" de pessoas? | Perfis, grupos, subgrupos | H11-H15 | 5 |
-| O que prediz o que? | Cadeias de associacao, caminhos opostos | H16-H18 | 3 |
-| **Total** | | | **18** |
+| O que prediz o que? | Cadeias de associacao, caminhos opostos | H16-H17 | 2 |
+| **Total** | | | **17** |
 
 ## Resumo por analista
 
@@ -30,7 +30,7 @@ espiritualidade, humor).
 | relacional | H05, H06, H07, H08, H09 | 5 |
 | estrutural | H10 | 1 |
 | segmentacao | H11, H12, H13, H14, H15 | 5 |
-| preditivo + comparativo | H16, H17, H18 | 3 |
+| preditivo + comparativo | H16, H17 | 2 |
 
 ---
 
@@ -374,20 +374,6 @@ ou algum outro menos obvio?
 - **Origem:** Experiencia em ciencia de dados
 - **Analista:** preditivo
 
-### H18 — Menos de 10 perguntas conseguem capturar seu perfil completo?
-
-37 itens e muito. Uma versao curta com menos de 10 perguntas bem
-escolhidas conseguiria prever o perfil completo de 6 fatores com boa
-precisao?
-
-- **Manchete:** "Um atalho de 10 perguntas para seu DNA de prazer"
-- **Teste:** Usar selecao automatica de variaveis (Lasso — tecnica que
-  escolhe os itens mais importantes e descarta o resto) em dados de
-  treino/teste. Ver quantos itens sao necessarios para prever os 6
-  fatores com pelo menos 70% de acerto.
-- **Origem:** Experiencia em ciencia de dados
-- **Analista:** preditivo
-
 ---
 
 ## Hipoteses eliminadas — justificativa
@@ -395,11 +381,12 @@ precisao?
 As 41 hipoteses originais foram reduzidas para 19. Abaixo esta o registro
 do que foi removido e por que.
 
-### Eliminadas por tentar corrigir o instrumento (1)
+### Eliminadas por tentar corrigir o instrumento (2)
 
 | ID antigo | Titulo | Motivo |
 |-----------|--------|--------|
 | H10 (rev.) | 8 dimensoes vs 6 | O objetivo nao e corrigir o instrumento — aceitamos os 6 fatores como sao. Tentar propor 8 fatores seria criticar a ferramenta, nao analisar os dados. |
+| H18 (rev.) | Versao curta com < 10 perguntas | Questiona o numero de perguntas da ferramenta — viola a regra de respeitar o instrumento. Se tem 37 itens, sao 37 itens. |
 
 ### Eliminadas por serem obvias (7)
 
@@ -469,7 +456,7 @@ do que foi removido e por que.
 
 ### Prioridade
 
-Todas as 19 hipoteses restantes sao de alta prioridade — as de media e
+Todas as 17 hipoteses restantes sao de alta prioridade — as de media e
 baixa foram eliminadas ou absorvidas durante o refinamento.
 
 ### Quem executa cada uma
@@ -486,7 +473,7 @@ nas Fases 5-6:
 
 ### Viabilidade
 
-Todas as 19 hipoteses funcionam com os dados que temos. Nenhuma precisa de
+Todas as 17 hipoteses funcionam com os dados que temos. Nenhuma precisa de
 dados demograficos ou externos. As comparacoes entre grupos usam grupos
 criados a partir dos proprios dados (quartis, clusters, divisoes por
 diversidade).
@@ -515,11 +502,12 @@ diversidade).
 | H15 | H26 | Perfil puramente intelectual |
 | H16 | H36 | Adrenalina vs serenidade |
 | H17 | H31 + H32 | Maior motor do prazer geral |
-| H18 | H33 + H35 | Versao curta do instrumento |
+| ~~H18~~ | ~~H33 + H35~~ | ~~Versao curta do instrumento~~ (eliminada — nao questionar o instrumento) |
 
 ---
 
-*Revisado de 41 para 18 hipoteses apos revisao de literatura e refinamento.*
+*Revisado de 41 para 17 hipoteses apos revisao de literatura e refinamento.*
 *Fase 4b — revisao informada por artigos academicos.*
 *Fase 4c — H10-antigo (8 dimensoes vs 6) eliminada por tentar corrigir o instrumento;
 H11-antigo reformulada como H10 (explorar itens avulsos de forma conservadora).*
+*Fase 4d — H18 (versao curta < 10 perguntas) eliminada por questionar o instrumento.*
