@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(git:*)",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "WebSearch",
+      "WebFetch(domain:consensus.app)",
+      "Bash(claude mcp:*)",
+      "mcp__claude_ai_Consensus__search",
+      "Bash(cut:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:www.statista.com)",
+      "WebFetch(domain:cdn.statcdn.com)",
+      "WebFetch(domain:brandfetch.com)"
+    ]
+  }
+}

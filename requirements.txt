@@ -1,0 +1,11 @@
+# Versões verificadas no ambiente em que a pipeline foi executada (2026-09-08).
+# Python 3.13.2
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.17.1
+scikit-learn==1.9.0
+statsmodels==0.15.0
+matplotlib==3.10.9
+seaborn==0.13.2
+networkx==3.6.1
+PyYAML==6.0.2
